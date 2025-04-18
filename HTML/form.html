@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "This page contains information about forms">
+    <title>Form </title>
+</head>
+<body>
+    <!--
+    Post request is given when we have to give a lot of data
+    Get request is given when we have to give simple information to the server. There is limit in this
+
+    When we use get, the information is sent into the server and it is shown in the url
+
+    Data is sent in the URL (as query parameters).
+
+Example:
+
+<form method="GET" action="/search">
+
+Submitting this might result in:
+
+/search?query=shoes&color=blue
+
+Not good for sensitive data and large amount of data as the URL is limited
+
+
+
+Post->
+Data is sent in the request body, not visible in the URL
+
+Login forms
+
+Contact forms   
+
+Submitting data that changes server state (like adding to a database)
+
+Can't bookmark or easily share the form data (which is usually a good thing for privacy!
+
+    -->
+
+
+    <h1>Form</h1>
+
+
+    <form action = "post">   <!--  The action attribute in an HTML <form> tag defines where the form data should be sent when the user submits the form.
+        
+        action="/submit-form" tells the browser to send the form data to the URL /submit-form.
+        -->
+        <div>
+
+        <label for ="username">Enter your name </label><!-- This id cannot be given to any other-->
+        
+        <input type = "text" id = "username" name  = "username" placeholder="Enter your name" required autofocus>
+        
+        </div>
+        <!-- The place holder is written in this text area and removes when the user gives the input
+        required means it is mandatory to fill the box
+        autofocus means when we type something the cursor will be move to this area
+        -->
+        <div>
+
+        <input type= "radio" id = "male" name = "gender" value = "male">
+        <label for = "male">Male</label>
+        <!--  We have used the radio button and give same name so at a time only one block is selected-->
+
+        <input type= "radio" id = "female" name = "gender" value = "female">
+        <label for = "femalejjj">Female</label>
+            <!-- The id of 'for' in label must be same as that of radio button otherwise it will not be selected 
+             when we click on the Name of the label but we can still select the radio button-->
+        </div>
+
+        <div>
+            <!--  In this we can select multiple boxes-->
+            <input type = "checkbox" id="Subscribe" name = "click" value = "yes">
+            <label for = "checkbox"> SUBSCRIBE</label>
+            <!--  First it will show the radio box then the value of label-->
+            <input type = "checkbox" id="unscribe" name = "click" value = "yes">
+            <label for = "unscribe"> UNSUBSCRIBE</label>
+
+            <input type = "checkbox" id="stay" name = "click" value = "yes">
+            <label for = "stay"> STAY</label>
+        </div>
+
+        <div>
+            <!-- We will keep it blank ideally  If we put enter your comment in other line then it will show it with some space-->
+             <label for = "comment">Enter your comment</label>
+            <textarea name = "comment" rows = "4" cols = "50">Enter your comment here.. 
+            </textarea>
+
+        </div>
+
+        <select name = "fruits">
+            <!-- This is used to create a drop down box which contain this values-->
+            <option value = "apple"> Apple</option>
+            <option value = "banana"> Banana</option>
+            <option value = "cherry"> Cherry</option>
+
+        </select>
+
+        <div>
+
+
+
+        </div>
+
+
+
+
+
+    </form>
+
+
+
+
+</body>
+</html>
