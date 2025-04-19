@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border</title>
+
+    <style>
+
+        h1{
+            background-color: aqua;
+
+
+            /* border-style:solid; This describe the shape and design of the border
+            border-width: 2px;
+            border-color:black;
+
+
+
+            short hand notation
+            */
+            border:solid black 2px;
+
+
+            /* This make the border rounded at the ends*/
+         
+            /* border-radius: 10px; This will make all the 4 corners rounded */
+
+            border-top-left-radius: 10px;
+
+            box-sizing: border-box;
+
+
+        } 
+
+        h2{
+            border-top: 2px black dashed;
+
+        }
+
+        #p1{
+
+            background-color: burlywood;
+
+            border: outset black 3px;
+
+            border-radius: 5px;
+
+            width : 400px;
+
+            height:70px;
+
+        }
+
+        span{
+            background-color: cyan;
+            border-width: 5px;
+            border-radius: 5px;
+            border-color: green;
+            border-style: groove;
+
+            width: 50px;
+            height: 40px;
+            /*The height and width cannot be assigned to inline elements
+            First we have to convert them into block elements using display*/
+
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1 id = "header">BOX MODEL</h1>
+
+    <h2>Border</h2>
+    
+    <p id = "p1">Lorem ipsum dolor sit , et maxime assumenda sapiente quis!</p>
+
+    <span>The height and weight will not assigned to it</span>
+
+    <p id = "p2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique porro rem.</p>
+    
+    <p id = "p3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam consequatur sint itaque, et assumenda.</p>
+   
+
+
+
+</body>
+</html>

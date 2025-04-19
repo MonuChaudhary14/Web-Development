@@ -1,0 +1,17 @@
+h1{
+    font-size: smaller;
+    text-align: center;
+}
+#article{
+    color : blue;
+    font-size: large;
+}
+.section{
+    background-color: #079f3c;
+}
+p,article{
+    width: 500px;
+}
+section.s{/* In this , only the section which has the class name s will be changed*/
+    color : mediumaquamarine;
+}
