@@ -1,0 +1,47 @@
+div{
+   
+    border: 2px black solid;
+    width: 5000px;
+    height: 5000px;
+    background-color: bisque;
+}
+img{
+    margin : 50px;
+}
+.image1{
+    position: static; /*No need to give this because it is by default value    */
+    top : 100px; /* NO effect on the element*/
+}
+
+.image2{
+    position : relative; /* By using this we can chnage the position property of the element from the current window*/
+    top : 100px;  /* This is used to move the element from the top
+    
+    The prev gap or space where it was ,will remains and no other element can take it
+    */
+}
+.image3{
+    position : absolute; /*In this we position the element from the parent element or closest postion anchestor*/
+
+    /* No gap/space is maintained in this . The elements hold the position of element
+    */
+
+    top : 150px;  
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+
+}
+
+.image4{
+    position: fixed;  /*In this the element will be fixed throughout the whole window*/
+    /*Space is not taken by */
+    top: 50px;
+
+}
+
+.image5{
+    position: sticky;  /* This will remain fixed until the element is inside a parent container like div*/
+    /*Space is not taken*/
+    top:500px;
+}

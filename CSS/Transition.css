@@ -1,0 +1,37 @@
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    border: 2px solid black;
+
+    transition-property: all;  /*We can use all keyword to apply to all*/
+    transition-duration: 4s;
+    transition-delay: 1ms;
+    transition-timing-function: ease;
+
+    /*Short Hand Notation*/
+
+    /* property name , duration */
+    transition: all 2s;
+
+    /* property name | duration | delay */
+    transition: all 5s 1ms;
+
+    /* property name | duration | timing function */
+    transition: all 5s ease;
+
+    /* property name | duration | timing function | delay */
+    transition: all 5s ease 1ms;
+
+    transform: width 2s , height 3s;   /*First the width is completed, then height will increase*/
+
+
+
+
+
+}
+.box:hover{  /*This is a pseudo class which applies these properties to the element when hover if even works when there is no transition but that will be sudden*/
+    width: 1200px;
+    background-color: darkseagreen;  /*It will suddenly change when transition property is only width 
+    but if we mark it all then color will also change gradually*/
+}

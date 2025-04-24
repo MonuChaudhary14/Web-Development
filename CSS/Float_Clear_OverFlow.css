@@ -1,0 +1,81 @@
+#div{
+    overflow: auto; /* When we use this the box will automatically adjust when overflow
+    
+    When the content flow the box then it is known as overflow
+
+
+     The overflow property in CSS controls what happens when content overflows (spills out of) its container
+
+
+    Value	What It Does
+    hidden	Extra content is cut off (clipped), and not visible.
+    visible	(default) Content overflows the box — nothing is clipped.
+    auto	Shows scrollbars only when needed.
+    scroll	Always shows scrollbars, even if not needed.
+    clip	Like hidden, but doesn’t allow scrolling. (Used mainly in animations.)
+
+    */
+
+    overflow: hidden;
+}
+
+#overflow{
+    width: 250px;
+    height: 250px;
+
+    overflow: scroll;
+    overflow: hidden;
+    overflow: visible; /*Default*/
+    overflow: inherit;
+    overflow: clip;
+    overflow: auto;
+
+    border: 2px solid black;
+}
+
+#div1{
+    float: left;
+    background-color: aqua;
+    width: 300px;
+}
+#div2{
+    float: left;
+    background-color: bisque;
+    width: 300px;
+    /* clear: left; */
+}
+#div3{
+    float: right;
+    background-color: blueviolet;
+    width: 300px;
+    /* clear: left; */
+}
+
+img{
+    float : right; 
+    
+    
+    /*The float property is used to push an element to the left or right, allowing text and inline elements to wrap around it. 
+    left – floats the element to the left.
+
+right – floats the element to the right.
+
+none – default; the element does not float.
+
+inherit – inherits float value from the parent*/
+
+
+
+}
+
+#right{
+    float : right;
+    clear: right; /*The clear property tells an element to move down below any floated elements that appear before it.
+
+    So if you have elements floating to the left or right, and another element should appear after them (not beside them), you use clear.
+    */
+}
+
+
+/* Collapse in float -> When we float(side by side) all the element of the box/parent container,
+then the container will collapse which is known as great collapse*/

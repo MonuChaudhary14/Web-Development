@@ -1,0 +1,22 @@
+ Physical Pixel (Device Pixel)
+The actual tiny dots that make up the screen.
+
+These are hardware-level pixels.
+
+The more physical pixels you have, the higher the screen resolution.
+
+For example, a phone might have a screen of 1080x1920 physical pixels.
+
+🔣 Logical Pixel (CSS Pixel or Device-Independent Pixel)
+A virtual pixel used by the operating system and browsers for layout.
+
+It’s the unit you typically work with in CSS.
+
+A logical pixel can represent multiple physical pixels, depending on the screen’s pixel density.
+
+📱 Why the Difference?
+Because of high-DPI (high-resolution) displays like Retina screens, physical pixels are too small to use 1:1 for web layout. To make UI elements readable and consistent across devices:
+
+Browsers scale the layout using logical pixels.
+
+This scaling is controlled by the device pixel ratio (DPR).

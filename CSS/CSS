@@ -22,7 +22,7 @@ Types->
 
 4.Group Selector --> We can use multiple element using the , 
 
-
+5.Universal Selector --> We can use this to make changes in the whole page
 
 
 
@@ -78,6 +78,9 @@ div {
   box-sizing: border-box;
 }
 🧾 Total width = 200px exactly (padding + border are inside the box)
+
+
+
 
 
 

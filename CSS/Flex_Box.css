@@ -1,0 +1,66 @@
+#container{
+    background-color: rgb(157, 204, 161);
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;  /* When we use flex , by default its value is row 
+    due to which the element are arranged in a row
+    */
+    
+    flex-direction: column;
+    
+    flex-direction: column-reverse;
+
+    flex-direction: row-reverse;  /*When we use this , all the elements gets reversed*/
+    
+    flex-wrap: wrap; /* When we use this, the element will wrap and come into new line 
+    when the screen ratio is reduced until the space is available
+    */
+
+    /*flex-wrap — it's a Flexbox property that controls whether flex items stay on one line or can wrap onto multiple lines.*/
+
+    flex-wrap: nowrap; /* When we use the elements will not move into the next line and the width is reduced when the ratio is reduced*/
+   
+    /* flex-wrap: wrap-reverse;  When we use wrap reverse , the elements move to upper side when the ratio is reduced*/
+    
+    /* flex-wrap: inherit;
+    flex-wrap: initial; */
+
+
+    justify-content: center;   /*Here the main axis is horizontal so it place at the centre of the horizontal line
+    but when we use flux direction as column then the main axis vertical so it place the elements at the centre correspoding to the height*/
+    justify-content: start;   /*It places the element at the start*/
+    justify-content: end;    /*It places the elements at the end*/
+
+    justify-content: space-between;   /*In this the first and the last element is connected to the container and all the other elements are equally spaced*/
+
+    justify-content: space-around;    /*When we use this every element has same space on both sides thats why there is double space between two elements*/
+
+
+}
+
+/*By default the flex tries to fit the elements in one line*/
+
+/*
+When the flex direction is row -> The main axis is horizontal
+When the flex direction is Column -> The main axis is vertical
+*/
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    padding: 2px;
+    border: 2px solid black;
+}
+#box1{
+    background-color: cadetblue;
+}
+#box2{
+    background-color :aqua;
+}
+#box3{
+    background-color :darkgray;
+}
+#box4{
+    background-color: rgb(4, 43, 44);
+}

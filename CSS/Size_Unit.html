@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Unit</title>
+    <link rel="stylesheet" href="Size_Unit.css">
+</head>
+
+<body>
+
+    <div class="div">
+        Size Unit
+    </div>
+
+    <div class="parent">
+        <div class="child">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis reprehenderit voluptates provident temporibus
+            corporis. Ab vel quos explicabo iusto quibusdam quis eum quaerat esse soluta enim pariatur minima expedita
+            tempore cupiditate minus eaque provident quidem laboriosam quas, deleniti perferendis odio et laborum? Nam,
+            amet tenetur.
+
+            <br>
+            <br>
+            First the parent has been made and its color is set to blue which take the whole block
+            <br>
+            <br>
+            After parent the child is created , which also take the full block if size is not given hence it change the color of the parent div
+
+
+        </div>
+    </div>
+
+    <div class = "viewport">
+        This will take the whole width and height according to the view port(the area which is visible)
+    </div>
+
+    <div class = "wrapper">
+        <div class="boxpx">I am 200px wide</div>
+        <div class = "boxvw">I am 10 vw wide</div>
+        <div class="boxem">I am 10em wide</div>
+
+
+    </div>
+
+    <div class = "container">
+        <div class="box">
+            The font size is the mutiply of the size of the container(px) and box(em)
+        </div>
+    </div>
+
+    <div style = "font-size: 5rem;">  
+        This will take the size equal to the product of root element/container and this value
+        <br>
+        This is rem unit
+    </div>
+
+</body>
+
+</html>

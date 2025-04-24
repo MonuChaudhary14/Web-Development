@@ -18,9 +18,6 @@ p{
 
     /*There are multiple ways to add color*/
 
-
-
-
 }
 
 #p1{
@@ -35,7 +32,7 @@ p{
     background-color: #0ed539;
     /*The first two components describe the value of r , then two g, and last two b*/
     
-    color : #0061ca;  /* In this the last two values describe the opacity*/
+    color : #496b8f;  /* In this the last two values describe the opacity*/
 
 
 
@@ -45,7 +42,7 @@ p{
     
     /* We can also add color using HSL*/
     color :hsl(1, 69%, 48%);
-    /*The first describe the hue , second -> saturation , third -> lightness*/
+    /*first -> hue , second -> saturation , third -> lightness*/
 
     background-color: hsla(40, 70%, 50%, 10); /*The last value is alpha*/
 }

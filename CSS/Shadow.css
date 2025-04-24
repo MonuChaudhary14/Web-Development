@@ -1,0 +1,55 @@
+:root{
+    --custom-color : black;
+    /*When we define it here, we can use it anywhere in the program 
+    unlike the variable which are given in some block*/
+}
+
+.container{
+    background-color: aquamarine;
+    border: 2px solid black;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background-color: darkgray;
+    width: 330px;
+    height: 330px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    --primary-color : gray;  /*With this we can create a custom variable works as a data type*/
+
+
+    /* box-shadow: 70px -50px grey; */
+    /*In this the first value is of x axis and second is of y axis 
+    These values can be positive and negative. for +ve y it move downward and upward for -ve*/
+
+    /* box-shadow: 50px 50px 50px grey; */
+    /*In this the third value is blur
+    Blur value has no effect when it is negative*/
+
+    /* box-shadow: 20px 20px 10px 20px black; */
+    /*Here the 4th value is spread radius*/
+
+    /* box-shadow: inset 15px 10px 10px 5px green;
+    the insert the make the shadow inwards or inside */
+
+    /*Multiple shadows*/
+    box-shadow: 10px 15px 5px 8px var(--primary-color), inset 10px 2px 4px 5px var(--custom-color);
+
+
+
+}
+
+#header{
+    /* text-shadow: 5px 3px 1px white; */
+
+    text-shadow: 5px 5px 3px white ;
+
+    /* text-shadow: 3px 4px; By default the color of shadow is black*/
+
+    text-shadow: 3px 5px 2px white, 2px 4px 3px blue;
+
+}
