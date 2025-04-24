@@ -1,0 +1,76 @@
+A network is a system of interconnected things that can communicate or interact with each other.
+
+A system in which a number of resources are connected and interact to each other is called as network
+They can be connected by wire, wireless, etc
+
+A computer network is a group of computers and devices (like printers, servers, routers, phones, etc.) connected together to share resources, exchange data, and communicate.
+
+Types:
+LAN (Local Area Network): Covers a small area like a home, school, or office.
+
+WAN (Wide Area Network): Covers large areas (like the internet).
+
+Wi-Fi Network: A wireless network that connects devices using radio signals.
+
+VPN (Virtual Private Network): A secure, encrypted connection over a public network
+
+Properties:
+Communication
+
+
+
+Internet->
+It is a network of networks. It is a global system.
+
+Inter->Interconnected
+Net-> Network
+
+
+Ip Address->  Unique Indentifaction of a machine
+If two systems want to communicate, then they must know their IP address
+
+
+
+Browser->
+It is a tool which is used to access resources from internet
+
+Broswer engine->
+It is used to request from server 
+
+
+Clients->
+It is the one which is requesting something from a server(another computer)
+
+
+Server->
+It is the one which sends the answer to the request of the client
+Types-> 
+Database
+File based
+Application
+Email server and many more
+
+
+
+DNS server->
+It converts the URL into the IP address which is known as domain name resolution
+
+
+Domain Name Resolution is the process of converting a domain name (like example.com) into an IP address (like 93.184.216.34) that computers use to identify each other on a network
+
+A DNS server (Domain Name System server) is like the phonebook of the internet. It helps computers find the IP address for a website name (domain) so they can connect to it.
+
+When you type something like www.google.com into your browser:
+
+Your computer sends a request to a DNS server.
+
+The DNS server checks if it knows the IP address for that domain.
+
+If it knows, it sends back the IP (like 142.250.190.4), and your browser connects to that address.
+
+If it doesn’t know, it asks other DNS servers until it finds the answer.
+
+
+
+
+

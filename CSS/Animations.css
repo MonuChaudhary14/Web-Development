@@ -1,0 +1,172 @@
+*{
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(237, 255, 155);
+    border: 3px solid black;
+
+}
+.box{
+    width: 350px;
+    height: 80px;
+    background-color: teal;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    
+    position : relative;   /*It is given so that we can use top , bottom , etc. properties*/
+
+
+    animation-name: rightmovement;
+    
+    animation-duration: 5s;   /*The time taken to complete the animation*/
+    
+    animation-iteration-count: 2;  /*How many times the animation should run*/
+
+    animation-delay: 1ms;   /*How much time it should stay before starting the animation*/
+
+    
+    /*The animation-timing-function in CSS defines how the intermediate steps of an animation are calculated — basically, it controls the speed curve of the animation over its duration.*/
+    
+    animation-timing-function: ease;  /*Starts slow, speeds up, then slows down again.  It is the default value*/
+
+    animation-timing-function: ease-in;  /*Starts slowly, then speeds up.*/
+
+    animation-timing-function: linear; /*Constant speed from start to finish*/
+
+    animation-timing-function: ease-out; /*Starts fast, then slows down at the end.*/
+
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1.0 ,0.1);
+
+
+
+    animation-direction: alternate;  /*With this the animation will follow the same path and reach to the starting point
+    The backward iteration is also counted
+    */
+
+    /* animation-direction: reverse;   It reverse the source and destination means it start from the 'to' and reaches to 'from' */
+
+    /*Fill-mode decides what will happen before the first frame and after the last frame is played*/
+    animation-fill-mode: forwards;   /*The element will stop and stay at the last position
+    Keeps the final state (the last keyframe) after the animation ends.*/ 
+
+    animation-fill-mode: backwards; /*The element will stay at the starting postion.
+    Applies the first keyframe immediately when the animation starts (even during the delay).*/
+
+    animation-fill-mode: both; /*The animation will follow the rules for both forwards and backwards,extending the animation properties in both direction
+    
+    Combines forwards and backwards.
+
+    Applies the first keyframe during delay and keeps the final keyframe after it finishes. 
+    */
+
+
+    /* animation-play-state: paused; It pauses the element */
+
+    animation-play-state: running; /*The animation plays normally.*/
+
+
+    /*Short-Hand Notation
+    animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state];
+
+    */
+
+    /* animation: movement 5s linear 1ms 2 alternate forwards running; */
+
+
+
+}
+
+@keyframes rightmovement {  /*Here the animation of rightmovement is there*/
+    
+    from{   /*It represents the initial styling*/
+        top:0;
+        left: 0;;
+    }
+    to{   /*It represents the final styling*/
+        top : 0;
+        left: 1200px;
+    }
+
+
+
+}
+
+#box2{
+    width: 350px;
+    height: 80px;
+    background-color: teal;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+
+    position: relative;
+
+    animation: leftmovement 5s linear 1ms 2 alternate forwards running;
+
+}
+
+@keyframes leftmovement{
+
+    from{
+        top : 500px;
+        left : 1200px;
+    }
+    to{
+        top:500px;
+        left : 0;
+    }
+
+}
+
+#circle{
+    width:100px;
+    height: 100px;
+
+    background-color: rgb(17, 129, 181);
+    border: 2px solid black;
+    border-radius: 50px;
+    margin: 10px;
+    position: relative;
+
+    top : 10%;
+    left: 50%;
+
+
+    animation: circlemovement 10s linear 0s infinite alternate forwards running;
+
+
+}
+
+@keyframes circlemovement{
+
+    0%{   /* 0% of animation*/
+       
+    top : 1%;
+    left: 5%; 
+    }
+    30%{
+        
+    top : 5%;
+    left: 90%;
+    }
+    60%{
+        
+    top : 70%;
+    left: 10%;
+    }
+    100%{
+        
+    top : 70%;
+    left: 90%;
+    }
+
+
+}

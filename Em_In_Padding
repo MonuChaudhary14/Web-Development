@@ -1,0 +1,48 @@
+em is a relative unit in CSS.
+
+It is based on the font size of the element it's used in.
+
+So:
+
+ini
+Copy
+Edit
+1em = font-size of the current element
+🔸 What Happens When You Use padding in em?
+When you set padding in em, the actual padding space will scale with the font size.
+
+Example:
+css
+Copy
+Edit
+.box {
+  font-size: 20px;
+  padding: 1em; /* = 20px of padding */
+}
+If you change the font size, the padding automatically grows or shrinks with it.
+
+This makes em super handy for scalable, responsive designs.
+
+🧠 Why Use em for Padding?
+It's great for accessibility — when users increase text size, spacing increases too.
+
+Keeps spacing proportional to text, which often looks more natural.
+
+Perfect for components like buttons, inputs, or cards where the padding should match the text size.
+
+⚠️ Gotchas
+If you're nesting elements, remember: em is relative to the current element's font-size, not always the root.
+
+Can lead to compounding if you're not careful:
+
+css
+Copy
+Edit
+.parent {
+  font-size: 20px;
+}
+
+.child {
+  font-size: 1.2em;  /* = 24px (1.2 * 20px) */
+  padding: 1em;       /* = 24px */
+}

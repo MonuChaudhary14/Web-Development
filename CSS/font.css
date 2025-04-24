@@ -1,0 +1,53 @@
+p{
+    font-style: italic; /* It changes the style or look of the text*/
+    
+    font-size: 30px;  /* 1 physical pizel = 1/196 of an inch*/
+  
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* This change the way in which the element is written
+    This is the default font which are availble in browser knowm as web safe fonts*/
+
+
+
+    /* font-family: "Bungee Spice", sans-serif; This font style is exteral font */
+
+
+    font-weight: 500;  /* this make the text dark and thick*/
+
+    line-height: 90px;  /* This is used to decide the gap between two lines*/
+
+
+    /*There are multiple ways to add color*/
+
+}
+
+#p1{
+    background-color: brown;
+    color: rgb(33, 19, 138);
+}
+#p2{
+    color:rgb(76, 192, 182); /*Here the last value is the alpha value which decides the transparency of the text*/
+}
+
+#p3{
+    background-color: #0ed539;
+    /*The first two components describe the value of r , then two g, and last two b*/
+    
+    color : #496b8f;  /* In this the last two values describe the opacity*/
+
+
+
+}
+
+.color{
+    
+    /* We can also add color using HSL*/
+    color :hsl(1, 69%, 48%);
+    /*first -> hue , second -> saturation , third -> lightness*/
+
+    background-color: hsla(40, 70%, 50%, 10); /*The last value is alpha*/
+}
+
+
+  
+
+

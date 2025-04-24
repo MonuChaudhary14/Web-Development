@@ -1,0 +1,44 @@
+In CSS, position is a property used to control the layout and placement of elements. Two of the values you mentioned — static and relative — are part of the position property.
+
+🔹 position: static;
+This is the default position value for all HTML elements.
+
+Elements with position: static are placed in the normal document flow.
+
+They are not affected by top, right, bottom, or left properties.
+
+You can’t move them with those offset properties.
+
+Example:
+
+div {
+  position: static;
+  top: 10px; /* This will have no effect */
+}
+🔹 position: relative;
+This positions the element relative to its normal position.
+
+The element still takes up space in the normal flow.
+
+But you can use top, left, right, or bottom to nudge it from where it would have been.
+
+This doesn’t affect the position of other elements.
+
+Example:
+
+div {
+  position: relative;
+  top: 10px;   /* Moves the element 10px down */
+  left: 20px;  /* Moves it 20px to the right */
+}
+
+position: absolute;
+This positions the element relative to the nearest positioned ancestor (i.e., the closest parent with a position other than static).
+
+If no such ancestor exists, it will be positioned relative to the <html> (or the initial containing block) — basically the entire page.
+
+The element is removed from the normal document flow.
+
+It does not affect other elements, and other elements ignore it.
+
+You can use top, right, bottom, and left to place it exactly where you want

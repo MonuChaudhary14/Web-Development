@@ -1,0 +1,34 @@
+When a client sends a request to the server then there are multiple processes which are-
+
+1.ISP(Internet Service Provider)-
+First the request is send to the ISP then the ISP access the Internet
+ISP provides the IP to the device
+
+
+Packets->
+When we are sending a file , the file is divided into multiple chunks
+these chunks are known as Packets
+
+
+Protocol-> 
+It is the set of rules 
+HTTP
+FTP
+SMTP
+Gmail-> SMTP
+
+
+TCP-> It tells the port number. It defines that on which application of the computer we have to interact
+
+Request -> application + TCP + IP + Hardware  
+
+
+Browser(request) -> Domain Name Resolution -> DNS -> IP Address -> Local ISP -> Regional ISP -> NSP(National Service Provider)
+
+
+If the local IPS knows the IP address then it will sends the request to the desired network but if it does not know the IP then it will send it to the regional ISP and then to NSP
+
+
+
+
+

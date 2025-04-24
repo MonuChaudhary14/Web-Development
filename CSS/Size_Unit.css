@@ -1,0 +1,48 @@
+.div{
+    border: 2px solid black;
+
+    width : 25%;  /* This will take a width of 25 % of the page
+    It takes the 25 % size of the immediate parent/box(container)
+    */
+    
+
+}
+.parent{
+    background-color: blue;
+    width : 80%;  /*The parent div will take 80% width of the page*/
+}
+.child{
+    background-color: burlywood;
+    width: 50%; /*The child div take 50% width of the parent div*/
+}
+.viewport{
+
+    background-color: darkgoldenrod;
+
+    width : 50vw; /*It take 50% of the view port*/
+    height: 100vh;  /*It means full height of viewport*/
+
+}
+.wrapper{
+    font-size: 1em; /* This means that the size is equal to the size of the immediate parent
+    In this case , the parent is body which has 16px size, so the size of this div is also 16px
+    */
+}
+
+.px{
+    width: 200px;
+}
+.vw{
+    width: 10vw;
+}
+.em{
+    width: 10em; /*It means multiply it by the font size 
+    By default size is 16 pixel so it take 160px
+    */
+}
+.container{
+    font-size : 10px;
+}
+.box{
+    font-size: 5em;
+}

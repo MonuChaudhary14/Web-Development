@@ -1,0 +1,24 @@
+#main{
+    border: 2px black solid;
+}
+
+#flex{
+    border: 2px black solid;
+}
+p{
+    background-color: blanchedalmond;
+    border: 2px solid black;
+}
+
+@media (min-width : 1200px) {
+    #main{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media (max-width : 1200px) {
+    #main{
+        display: flex;
+        flex-direction: column;
+    }
+}

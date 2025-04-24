@@ -1,0 +1,79 @@
+#container{
+    background-color: rgb(157, 204, 161);
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;  
+
+    margin: 10px;
+    padding: 10px;
+    height: 1000px;
+
+    /* flex-wrap: wrap; */
+
+    flex-direction: row;  /*This is the by default value, no need to write this*/
+    
+    align-items: center;  /* The align items works in cross direction
+    For ror flex direction , the align direction is vertical
+    */
+
+    align-items: end;  /*It places the element at the end of the cross line*/
+    align-items: start;  /*It places the element at the start of the cross line*/
+
+    align-items: stretch;  /*It stretches the element to the last of the container
+    /* but if the height of the box is given then it will only show upto the height . 
+    To see the stretch remove the height from the box*/ 
+
+
+    /*When we wrap elements , then the space between the elemetns can be removed using align content*/
+
+    align-content: end;  /* All the content will be shifted to the end*/
+    align-content: start; /* (only applies if wrapping occurs) */
+
+    
+
+}
+
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    padding: 2px;
+    border: 2px solid black;
+
+}
+
+/*We can also change the propery of the elements/items*/
+
+/*
+Properties->
+1.Order-> By this we can change the sequence of the elements  
+2.Flex shrink -> It determines the rate at the an element shrinks 
+3.flex-basis-> It defines the initial size (width or height) of a flex item before any space distribution occurs (before flex-grow or flex-shrink kicks in). 
+
+*/
+
+#box1{
+    background-color: cadetblue;
+    order: 10;  /*When we give this, this element will reach at the last ,
+    we can give a large value like 500 to ensure that it reaches the last*/
+}
+#box2{
+    background-color :aqua;
+    flex-shrink: 5;   /*This box will shrink fastly then the other boxes*/
+    align-self: auto;
+    align-self: flex-start;
+    align-self: flex-end;
+}
+#box3{
+    background-color :darkgray;
+    flex-grow: 3; /*It determines the rate of the increase in the size of the box
+    It also makes the box larger then the other basically it uses the remaining space*/
+}
+#box4{
+    background-color: rgb(4, 43, 44);
+    order: -1;  /*When we give this , the element will reach the end*/
+    flex-basis: 320px;/*It determines the initial dimension of the flex item(before shrinking or growing)*/
+    
+}
+
+/*Flex self-> align-self allows a single flex item to override the align-items value of the parent container.*/

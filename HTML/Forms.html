@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <pre style="background-color: rgb(53, 138, 138); color: chartreuse;">
+        Form is the structure to collect the user input
+
+        Tags available in form
+
+        form -> It is used to create form for web input
+
+        input -> It is used to take input from multiple ways
+
+        label -> The text attached to the input is label. Due to this when we click on the content of the label we reaches to the id 
+        Every label contain a 'for' attribute whose value must be equal to the id of the input
+
+        select -> drop down
+
+        option 
+
+        button
+
+        fieldset -> This is used to group multiple input elements so that we can give captions
+
+        legend -> It is used to give caption to a field set
+
+    </pre>
+
+    <div>
+
+      <form >
+
+        <label for = "textbox">Login ID</label>
+        <input type="text" id = "textbox" name = "field"value = "Enter your name">
+        <!-- <input>   This will create a input with type text -->
+        <br>
+
+
+
+        <label for = "password">Enter password</label>
+        <input type = "password" id = "password" placeholder="Enter your password">
+        Place Holder is used to show a content into the input area while the value attribute puts a value in the text area
+        <br>
+
+
+
+        <label for = "English">English</label>
+        <input type = "radio" id = "English" name="Language" value = "english">
+        <label for = "Hindi">Hindi</label>
+        <input type = "radio" id = "Hindi" name = "Language" value = "hindi"> 
+        <!-- When the user hit the submit the data will we sent to the server like Language = english -->
+        <br>
+
+
+
+        <label for="Check1">CHECK 1</label>
+        <input type="checkbox" id="Check1" name="Checkbox" value="check1">
+        <label for="Check2">CHECK 2</label>
+        <input type="checkbox" id="Check2" name="Checkbox" value="check2">
+        <label for="Check3">CHECK 3</label>
+        <input type="checkbox" id="Check3" name="Checkbox" value="check3">
+        
+
+
+        <br/>
+        <label for = "Date">Enter your date</label>
+        <input type = "date" id = "Date" >
+
+
+
+        <br/>
+        <fieldset>
+          <legend>Choose your favourite food</legend>
+
+        <label for = "foods">Choose your food</label>
+        <!-- If you want the form to send multiple selected options under the same name, add [] to the name: -->
+        <select name = "food[]" id = "foods" multiple    size = "2">
+        <!-- With multiple we can select multiple selection
+        Size determines how can elements are visible without scrolling -->
+          <option value="chappati">Chappati</option>
+          <option value = "Dal" > Dal Makhni</option>
+          <option value = "kurkure">Kurkure</option>
+        </select>
+
+        </fieldset>
+        <br>
+
+        <label for = "file">Upload your file</label>
+        <input type = "file" name = "files" id = "file">
+        <br>
+
+        
+        <label for = "img">Click this image</label>
+        <input type = "image" src = "luffy-with-ship-0u-1920x1080.jpg" alt = "luffy" id = "img" name = "one piece" height="200" width = "400">
+
+
+        <br>
+        <label for = "area"> Enter your name</label>
+        <textarea name = "textarea" id = "area" cols="10" rows = "5" placeholder="Enter something about yourself"></textarea>
+        <br>
+
+        
+        <br>
+        <input type="submit" value="Submit the form">
+        <!-- Value defines the text which will be written on that button -->
+        <br>
+
+        <button> Click Here</button>
+
+
+      </form>  
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        *{  /*Universal Selector*/
+            margin: 0;
+            padding: 0;
+        }
+
+        p{
+            background-color: darkorange;
+            width : 500px;
+            height : 70px;
+
+            /*By default padding and margin should be 0px 
+            We use a universal selector to make margin and padding 0px
+            */
+
+            /*Padding-> This make a space between border and content*/
+            padding: 15px;
+
+
+            /*Border*/
+            border: solid black 2px;
+            border-radius: 4px;
+
+            /* Margin -> The gap between two boxes and from the website .Occurs in all directions*/
+            margin: 50px;;
+
+        }
+
+        article{
+            background-color: rgb(214, 255, 9);
+            width : 300px;
+            height : 50px;
+
+            border: solid black 3px;
+
+            /* padding-top:10px;
+            padding-left: 6px;
+            padding-bottom: 2px;
+            padding-right :7px; 
+            
+            Alternate method -> The above patten will be followed*/
+            padding: 10px 6px 2px 7px;
+
+            /*Another method-> For X and Y axis*/
+
+            /* padding: 10px 30px; */
+
+
+            margin-top :50px;
+            margin-left: 40px;
+            margin-bottom: 50ox;
+            margin-right: 40px;
+
+            /* Same shorthand property as padding */
+
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        The contents we provide will be in the form of a box 
+        Everything will be rendered in box
+
+        Margin
+        |
+        Border
+        |
+        padding
+        |
+        content
+        |
+        padding
+        |
+        Border
+        |
+        Margin
+
+    </pre>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatum nesciunt officiis corrupti deleniti saepe architecto tempore, eum suscipit? Sunt amet quia voluptate?
+    </p>
+
+    <article>This text will be 50px away from the paragraph because of margin</article>
+    
+</body>
+</html>

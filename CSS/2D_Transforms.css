@@ -1,0 +1,53 @@
+.box {
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+
+    transition: all 3s linear 1ms;
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    transform: rotate(60deg);
+    /*This will rotate the box*/
+    transform: rotate(-180deg);
+
+
+    transform: scale(2);
+    /*This will make size of whole box increase to double*/
+    transform: scale(0.5);
+
+    transform: skew(45deg);
+    transform: skew(-20deg);
+
+
+    transform: translate(500px , 50px);
+    /*1-> x axix, 2-> y axis*/
+
+
+    transform: scaleY(1.5);
+    transform: scaleX(1.5);
+
+
+}
+
+p {
+    font-size: 50px;
+}

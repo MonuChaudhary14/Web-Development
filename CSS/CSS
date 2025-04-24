@@ -1,0 +1,131 @@
+CSS-> Cascading Style Sheet
+It is used to style or design the web page
+
+Methods to add CSS in file
+1.Inline
+2.Internal
+3.External
+
+
+
+
+
+
+Selector is way to target single or multiple elements to change them through CSS
+
+Types->
+1.Element Selector --> We can change the properties of an element like h1 using h1{ } means we will use the tag name
+
+2.Id Selector --> We use the id of the element and we have to use the #name before styling 
+
+3.Class Selector --> We can use the class name to style the element which has the same class. We have to use .name to style
+
+4.Group Selector --> We can use multiple element using the , 
+
+5.Universal Selector --> We can use this to make changes in the whole page
+
+
+
+In font-family , the default fonts are known as web safe fonts.
+
+
+
+
+Inline elements flow with the text, like words in a sentence.
+
+They don't break onto a new line.
+
+Most importantly: inline elements don’t respect width, height, margin-top, margin-bottom, or padding-top/padding-bottom in the way block elements do
+To use height and width in inline elements then we have to use display function and then change their properties
+
+
+
+box-sizing controls how the browser calculates the total size of an element — specifically, how it handles width, height, padding, and border.
+
+🧠 There are two main values:
+1. content-box (default)
+The width and height apply only to the content.
+
+Padding and border are added on top, increasing the element's total size.
+
+🧮 Total size = width + padding + border
+
+css
+Copy
+Edit
+div {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid;
+  box-sizing: content-box;
+}
+🧾 Total width = 200 + 202 + 102 = 260px
+
+2. border-box (recommended)
+The width and height include content + padding + border.
+
+This makes layout easier and more predictable.
+
+🧮 Total size = exactly the declared width and height
+
+css
+Copy
+Edit
+div {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid;
+  box-sizing: border-box;
+}
+🧾 Total width = 200px exactly (padding + border are inside the box)
+
+
+
+
+
+
+
+
+
+In CSS, when multiple rules could apply to the same element, the browser uses specificity and the cascade to decide which style "wins". There are four key factors involved in this decision:
+
+1. Importance (Important declarations)
+CSS properties marked with !important take priority over others.
+
+Even if another rule has higher specificity, !important can override it.
+
+Example:
+
+p {
+  color: red !important;
+}
+2. Specificity
+CSS calculates how specific a selector is. More specific selectors override less specific ones.
+
+Specificity is usually measured in 4 parts (A, B, C, D):
+
+A – Inline styles (e.g. style="color:blue"): 1,0,0,0
+
+B – IDs (e.g. #header): 0,1,0,0
+
+C – Classes, attributes, pseudo-classes (e.g. .main, [type="text"], :hover): 0,0,1,0
+
+D – Elements and pseudo-elements (e.g. div, p, ::before): 0,0,0,1
+
+Higher numbers take precedence.
+
+3. Source Order (Later wins)
+If selectors have the same specificity and importance, the one that comes last in the CSS wins.
+
+This reflects the "Cascading" part of CSS.
+
+4. Origin of the Stylesheet
+There are different stylesheets:
+
+User agent styles (browser default styles)
+
+User styles (custom styles set by the user, e.g. browser accessibility settings)
+
+Author styles (your CSS)
+
+Author styles usually override user agent styles. !important rules in user styles can override author styles unless the author's styles are also !important

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    
+    <h2> Job Application</h2>
+
+    <form >
+
+    <label for = "name">Name:</label>
+    <br/>
+    <input type = "text" id = "name" placeholder="Full Name" name = "Name">
+
+    <br>
+    <label for = "email">Email:</label>
+    <br>
+    <input type = "email" id = "email" placeholder="123@gmail.com">
+    <br>
+
+    <label for="phone">Phone:</label>
+    <br>
+    <input type="tel" id = "phone">
+    <br>
+
+    <label for = "resume">Resume:</label>
+    <input type = "file" id = "resume">
+
+    <br>
+
+    <label for = "exp">Experience:</label>
+    <input type="number" id = "exp" min = "0" max = "50">
+
+    <br>
+
+    <fieldset>
+        <legend>Skills:</legend>
+
+       <input type = "checkbox" id = "HTML" name = "skills">
+       <label for="HTML">HTML</label> 
+       <br>
+
+       <input type="checkbox" name="skills" id="CSS">
+       <label for="CSS">CSS</label>
+       <br>
+
+       <input type="checkbox" name="skills" id="JS">
+       <label for="JS">JS</label>
+       <br>
+
+    </fieldset>
+
+    <label for ="Education">Highest Education</label> <br>
+    <select id = "Education" name = "Education">
+        <option value="high School">High School</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="college">College</option>
+    </select>
+    <br>
+    Availability: <br>
+    <input type="radio" name="time" id="full">
+    <label for = "full time">Full time</label>
+    
+    <input type="radio" name="time" id="part">
+    <label for = "part time">Full time</label>
+    <br>
+
+    <label for = "comment">Comments</label>
+    <br>
+    <textarea name="comments" id="Comments"></textarea>
+
+    <input type = "submit" value = "Submit">
+    </form>
+
+
+
+</body>
+</html>
