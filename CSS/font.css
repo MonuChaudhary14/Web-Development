@@ -1,53 +1,71 @@
-p{
-    font-style: italic; /* It changes the style or look of the text*/
-    
-    font-size: 30px;  /* 1 physical pizel = 1/196 of an inch*/
-  
-    font-family: Verdana, Geneva, Tahoma, sans-serif; /* This change the way in which the element is written
+p {
+    font-style: italic;
+    /* It changes the style or look of the text*/
+    font-style: oblique 90deg;
+    /* Valid values are degree values of -90deg to 90deg inclusive
+     If an angle is not specified, an angle of 14 degrees is used. 
+     Positive values are slanted to the end of the line, while negative values are slanted towards the beginning.*/
+    font-style: oblique;
+
+
+    font-size: 30px;
+    /* 1 physical pizel = 1/196 of an inch*/
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* This change the way in which the element is written
     This is the default font which are availble in browser knowm as web safe fonts*/
 
 
 
     /* font-family: "Bungee Spice", sans-serif; This font style is exteral font */
+    font-family: "Bungee Spice", sans-serif;
 
+    font-weight: 500;
+    font-weight: bolder;
+    /* this make the text dark and thick(boldness)
+    check more values*/
 
-    font-weight: 500;  /* this make the text dark and thick*/
-
-    line-height: 90px;  /* This is used to decide the gap between two lines*/
+    line-height: 90px;
+    /* This is used to decide the gap between two lines*/
 
 
     /*There are multiple ways to add color*/
 
+
+
+    /*font variant*/
+    font-variant: small-caps slashed-zero; /*small-caps make the text capital and slashed-zero -> It changes 0 to 0 which contain a slash in it*/
+    font-variant: common-ligatures tabular-nums;
+    font-variant: normal;
+    font-variant: no-common-ligatures proportional-nums;/*It shows a dot above i*/
+
 }
 
-#p1{
+#p1 {
     background-color: brown;
     color: rgb(33, 19, 138);
 }
-#p2{
-    color:rgb(76, 192, 182); /*Here the last value is the alpha value which decides the transparency of the text*/
+
+#p2 {
+    color: rgba(76, 192, 182, 0.781);
+    /*Here the last value is the alpha value which decides the transparency of the text*/
 }
 
-#p3{
+#p3 {
     background-color: #0ed539;
     /*The first two components describe the value of r , then two g, and last two b*/
-    
-    color : #496b8f;  /* In this the last two values describe the opacity*/
 
-
+    color: #0e7a06a3;
+    /* In this the last two values describe the opacity*/
 
 }
 
-.color{
-    
+.color {
+
     /* We can also add color using HSL*/
-    color :hsl(1, 69%, 48%);
+    color: hsl(1, 69%, 48%);
     /*first -> hue , second -> saturation , third -> lightness*/
 
-    background-color: hsla(40, 70%, 50%, 10); /*The last value is alpha*/
+    background-color: hsla(40, 70%, 50%, 10);
+    /*The last value is alpha*/
 }
-
-
-  
-
-

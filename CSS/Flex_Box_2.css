@@ -12,7 +12,7 @@
     flex-direction: row;  /*This is the by default value, no need to write this*/
     
     align-items: center;  /* The align items works in cross direction
-    For ror flex direction , the align direction is vertical
+    For row flex direction , the align direction is vertical
     */
 
     align-items: end;  /*It places the element at the end of the cross line*/
@@ -23,12 +23,19 @@
     To see the stretch remove the height from the box*/ 
 
 
-    /*When we wrap elements , then the space between the elemetns can be removed using align content*/
+    /*When we wrap elements , then the space between the elements can be removed using align content*/
 
     align-content: end;  /* All the content will be shifted to the end*/
     align-content: start; /* (only applies if wrapping occurs) */
 
-    
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    |
+    |   ShortHand notation
+    V
+    flex-flow: row wrap; */   
+
+
 
 }
 
@@ -39,6 +46,7 @@
     margin: 2px;
     padding: 2px;
     border: 2px solid black;
+    flex: 1;
 
 }
 

@@ -11,6 +11,8 @@
 
     flex-direction: row-reverse;  /*When we use this , all the elements gets reversed*/
     
+
+
     flex-wrap: wrap; /* When we use this, the element will wrap and come into new line 
     when the screen ratio is reduced until the space is available
     */
@@ -26,10 +28,11 @@
 
 
     justify-content: center;   /*Here the main axis is horizontal so it place at the centre of the horizontal line
-    but when we use flux direction as column then the main axis vertical so it place the elements at the centre correspoding to the height*/
+    but when we use flex direction as column then the main axis vertical so it place the elements at the centre correspoding to the height*/
     justify-content: start;   /*It places the element at the start*/
     justify-content: end;    /*It places the elements at the end*/
-
+    
+    
     justify-content: space-between;   /*In this the first and the last element is connected to the container and all the other elements are equally spaced*/
 
     justify-content: space-around;    /*When we use this every element has same space on both sides thats why there is double space between two elements*/

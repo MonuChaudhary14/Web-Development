@@ -1,10 +1,10 @@
 #div{
     overflow: auto; /* When we use this the box will automatically adjust when overflow
     
-    When the content flow the box then it is known as overflow
+    When the content flow from the box then it is known as overflow
 
 
-     The overflow property in CSS controls what happens when content overflows (spills out of) its container
+    The overflow property in CSS controls what happens when content overflows (spills out of) its container
 
 
     Value	What It Does
@@ -17,6 +17,7 @@
     */
 
     overflow: hidden;
+    background-color: lightblue;
 }
 
 #overflow{
@@ -29,6 +30,8 @@
     overflow: inherit;
     overflow: clip;
     overflow: auto;
+
+    background-color: lightyellow;
 
     border: 2px solid black;
 }
@@ -63,9 +66,6 @@ right – floats the element to the right.
 none – default; the element does not float.
 
 inherit – inherits float value from the parent*/
-
-
-
 }
 
 #right{

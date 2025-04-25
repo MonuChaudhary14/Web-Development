@@ -24,18 +24,19 @@
 
 }
 .wrapper{
-    font-size: 1em; /* This means that the size is equal to the size of the immediate parent
+    font-size: 1em; /* This means that the size is equal to the 1 * size of the immediate parent
     In this case , the parent is body which has 16px size, so the size of this div is also 16px
     */
+    border: 2px solid black;
 }
 
-.px{
-    width: 200px;
+.boxpx{
+    width: 100px;
 }
-.vw{
+.boxvw{
     width: 10vw;
 }
-.em{
+.boxem{
     width: 10em; /*It means multiply it by the font size 
     By default size is 16 pixel so it take 160px
     */
