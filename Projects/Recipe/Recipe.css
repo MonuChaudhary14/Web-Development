@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: none;
+    background: #b2b59a;
+    background: linear-gradient(90deg, rgba(178, 181, 154, 1) 100%, rgba(230, 228, 204, 1) 33%);
+
+    box-sizing: border-box;
+
+}
+#navlist{
+    padding: 15px;
+    width: 100%;
+    list-style-type: none;
+    /*This is used to change the style of the list like like it can remove the . in ul list*/
+
+    font-size: 2.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+
+}
+.navcontainer{
+
+    background: #7178b3b0;
+    /* background: radial-gradient(circle, rgba(218, 242, 242, 1) 100%, rgba(117, 128, 230, 1) 33%); */
+
+    width: 100vw;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+nav{
+    width: 100%;
+}
+
+#navlogo{
+    
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+
+    
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+#navitems{
+    display: flex;
+    gap: 40px;
+
+}
+
+
+.contentbox{
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
+
+    gap:100px;
+
+    background-color: azure;
+
+    box-shadow : 0px 0px 30px black;
+
+
+}
+
+ul, ol {
+    padding-left: 20px; /* or adjust as needed */
+    margin-left: 0;     /* reset default margin if needed */
+}
+
+
+
+.footerbox{
+    background: #7178b3b0;
+
+    /* background: radial-gradient(circle, rgba(218, 242, 242, 1) 100%, rgba(117, 128, 230, 1) 33%); */
+    color: #000000;
+    width: 100%;
+
+    text-align: center;
+    min-height: 35px;
+
+    position: relative;
+    top:2px;
+    bottom:0px;
+}
+
+.footer p{
+    color : black;
+
+    font-size: 1.5rem;
+}
+.item{
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+.rightbox{
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+
+    transition: all 0.6s 0s;
+
+    filter: drop-shadow(8px 8px 10px gray);
+}
+
+.rightbox img{
+    height: 200px;
+    width: 200px;
+
+    border-radius: 10px;
+
+
+    
+}
+
+.rightbox .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(128, 128, 128, 0.552);
+
+    display: flex;
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    transition: all 0.3s linear 0s;
+
+}
+
+.rightbox:hover .overlay{
+    opacity: 1;
+}
+
+.rightbox .overlay span{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.rightbox:hover{
+    transform: scale(1.3);
+}
+
+.leftbox{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    width: 70%;
+    margin: 10px;
+}
+
+.leftbox h2{
+    font-size: 2rem;
+}
+
+.leftbox h3{
+    font-size: 1.8rem;
+}
+
+.ingbox{
+    font-size: 1.5rem;
+}
+
+.recipebox{
+    font-size: 1.5rem;
+}
