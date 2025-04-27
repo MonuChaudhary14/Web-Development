@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(128, 128, 128, 0.24);
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    padding: 3rem;
+
+    border: 3px solid black;
+
+    /*It works on horizontal axis*/
+    justify-items: center;
+    justify-items: start;
+    justify-items: stretch;
+    justify-items: end;
+
+    /*It works on vertical axis*/
+    align-items: center;
+    align-items: start;
+    align-items: stretch;
+    align-items: end;
+
+
+    /*It works on both axis*/
+    place-items: center;
+
+
+}
+
+.item{
+    height: 100px;
+    width: 100px;
+    background-color: palegreen;
+    border: 2px solid black;
+
+    /*It works on horizontal axis*/
+    justify-self: start;
+    /* justify-self: stretch; Try it after removing height and width*/
+
+    /*It works on vertical axis*/
+    align-self: center;
+    align-self: stretch;
+    align-self: end;
+
+    place-self:center;  /*This will convert both the properties(justify and align)*/
+    
+
+
+}

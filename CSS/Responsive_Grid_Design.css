@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+
+    display: grid;
+    gap: 1rem;
+    background-color: rgb(198, 198, 76);
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    /*We can make a website responsive with this
+    The auto-fit automatically selects the number of columns 
+    The minmax determines the minimum and maximum height of the column
+    */
+
+    grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+
+}
+
+.items{
+    padding: 1rem;
+    border: 3px solid black;
+    background-color: rgb(97, 97, 228);
+    color: white;
+}
