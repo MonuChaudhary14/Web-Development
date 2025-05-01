@@ -1,0 +1,53 @@
+It adds the functionality in the web application
+
+It works as a brain of a website
+
+It is a scripting language by which we can run a behavior on a browser
+
+
+
+In JavaScript, ECMA usually refers to ECMAScript, which is the standard specification that defines how the JavaScript language works.
+
+What is ECMAScript?
+ECMAScript is the official name of the language standardized by Ecma International in a specification called ECMA-262.
+
+JavaScript is the most well-known implementation of ECMAScript.
+
+Other implementations include JScript (by Microsoft) and ActionScript (used in Flash).
+
+Why ECMAScript Matters in JavaScript:
+It defines the syntax, types, statements, keywords, operators, and standard libraries (like Array, Object, String, etc.).
+
+Updates to ECMAScript (like ES5, ES6, etc.) introduce new features into JavaScript.
+
+
+A JavaScript engine is a program that executes JavaScript code, typically within a web browser or a server environment like Node.js. It takes your JS code, parses it, compiles/interprets it, and then runs it.
+
+Key Concepts of a JavaScript Engine:
+Parsing: Converts JS code into an Abstract Syntax Tree (AST).
+
+Compilation: Modern engines use Just-In-Time (JIT) compilation to convert JS into optimized machine code on the fly.
+
+Execution: Runs the compiled code on the CPU.
+
+Popular JavaScript Engines:
+
+Engine	Developer	Used In
+V8	Google	Chrome, Node.js, Deno
+SpiderMonkey	Mozilla	Firefox
+JavaScriptCore (a.k.a. Nitro)	Apple	Safari
+Chakra	Microsoft (retired)	Legacy Edge (pre-Chromium)
+Hermes	Meta (Facebook)	React Native (mobile JS)
+Example: V8 Engine (Google)
+Written in C++.
+
+Compiles JavaScript directly to machine code using JIT.
+
+Powers Chrome and Node.js.
+
+Role in Web Development
+The engine is what actually runs your JavaScript.
+
+Performance improvements (e.g., better garbage collection, faster JIT) directly affect how fast your web apps feel.
+
+
