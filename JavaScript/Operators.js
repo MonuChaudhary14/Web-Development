@@ -44,9 +44,7 @@ Edit
 console.log(window.name); // usually an empty string unless explicitly set
 So when you write:
 
-js
-Copy
-Edit
+
 let name = "John";
 You're shadowing the global window.name property. Many linters or browser dev tools (like Chrome DevTools or VS Code) will show a warning like:
 

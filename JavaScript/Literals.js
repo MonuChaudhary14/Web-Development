@@ -12,8 +12,37 @@ Array literals
 // String Literals
 let myName = "Mayank Pandey!";
 let message = 'JavaScript is a scripting language.';
+let fullname = new String("Monu Chaudhary");
+console.log(typeof(message));
+console.log(typeof(fullname));
+
+console.log(myName.length);
+console.log();
+
+let len = message.length;
+
+console.log(len);
 
 
+console.log(myName.toUpperCase());
+
+let str = "HelloWorld";
+
+console.log(str.substring(2));
+console.log(str.substring(2, 8));
+
+let sentence = "Hello I am Monu Chaudhary";
+let words = sentence.split(' ');  // This will seperate the sentence on the basis of ' '
+console.log(words);
+
+
+let para = "hello i am \"monu chaudhary\"";
+console.log(para);
+
+console.log(words.join(','));
+
+
+console.log();
 // Template Literals -> They are enclosed within backticks (``) instead of the single('') or double("") quotation marks. 
 
 // Template literals support multi-line strings and allow for easy interpolation of variables and expressions.
