@@ -51,3 +51,11 @@ The engine is what actually runs your JavaScript.
 Performance improvements (e.g., better garbage collection, faster JIT) directly affect how fast your web apps feel.
 
 
+
+
+var is not block scope means it can be anywhere even if we declare it inside a function while let and const are block scope
+
+
+
+
+the window object is the global scope object. This means that variables, properties, and methods by default belong to the window object. This also means that specifying the window keyword is optional
