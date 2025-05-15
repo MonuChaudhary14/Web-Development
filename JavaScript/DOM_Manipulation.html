@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <p id="First_Para">This is the first para</p>
+    <p class="para">This is the second para</p>
+    <p class="para">This is the third para</p>
+
+    <div id="fdiv">
+
+        <p class "fpara">
+            This is my first 
+            <span>
+                text
+        </span>
+    </p>
+
+        <p>
+            This is my second 
+            <span>
+                text
+        </span>
+    </p>
+
+    </div>
+
+
+
+
+    <script>
+
+        // Methods to Select Elements
+
+        document.getElementById("First_Para"); // When we give this in the console it will represent the html code of the element with that id
+
+        document.getElementsByClassName("para");
+
+        document.getElementsByTagName('p');
+
+
+        document.querySelector('.para');  // In this only the first element with the class para is shown all the other are removed
+
+        document.querySelector("#First_Para");
+
+        document.querySelector('p');  //  In this only the first para is returned it will ignore all the other paras    
+
+        // TO avoid this problem
+
+        document.querySelectorAll('p'); // It will return all the para elements
+
+        // Hack -> When we inspect the code in the browser and select the element then there is some $code($0) in that which can be used to find the value like 
+        // $0
+
+
+
+
+
+        // Get and Update Exising Elements
+
+        // 1. innerHTML
+        // 2. outerHTML
+        // 3. text-content
+        // 4. innerText
+
+        document.getElementById('First_Para').innerHTML = "This is the updated new Para"; // InnerHTML change the content inside the para
+
+        /*
+        outerHTML is a DOM property that returns the entire HTML element as a string, including the element itself — not just its content.
+
+        You can also use outerHTML to replace the element with new HTML.
+        */
+
+        let header = document.getElementById("First_Para");
+        header.outerHTML =  '<h2>This is header </h2>';
+
+
+        
+            // We can change the content using textcontent
+            let element = document.getElementById("#fdiv"); 
+
+            element;    // This will show the whole div tag
+
+            element.textContent;  // This will return the whole text inside the element
+            /*
+            All text inside the element (including hidden)
+            Faster (doesn’t trigger reflow)
+            Ignores tags, just gives plain text
+            Preserves all whitespace
+            */
+
+            element.innerText;
+            /*
+            Only visible text (ignores hidden elements)
+            Slower (triggers layout reflow)
+            Also ignores tags
+            Collapses whitespace like rendered content
+
+            If we make any element hidden then it will not give the hidden element
+            */
+
+
+
+
+            // Add/Create element
+
+            let fheading = document.createElement('h1');
+            fheading.textContent = "This is H1";
+
+            // Where i have to append this
+
+            let bodytag = document.querySelector('body');
+
+            bodytag.appendChild(fheading);
+
+
+            let mydiv = document.querySelector("#fdiv");
+
+            let newElement = document.createElement('span');
+
+            newElement.textContent = "This is span tag";
+
+            mydiv.insertAdjacentElement('beforebegin', newElement);
+            mydiv.insertAdjacentElement('afterbegin', newElement);
+            mydiv.insertAdjacentElement('beforeend', newElement);
+            mydiv.insertAdjacentElement('afterend', newElement);
+
+
+
+
+            // Removal -> Opposite of appendchild
+
+            let parent = document.getElementById("fdiv");
+
+            let child = document.querySelector("fpara");
+
+            parent.removeChild(child);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

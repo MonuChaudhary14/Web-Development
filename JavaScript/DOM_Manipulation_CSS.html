@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CSS</title>
+</head>
+
+<body>
+
+    <div id = "fdiv" style="background-color: aqua; padding: 2rem;">
+        First Div
+        <p id = "fpara" class = "firstclass secondclass thirdclass" style="background-color: green; padding: 1rem;">
+            First Para
+        </p>
+        <div id = "sdiv" style="background-color: yellow; padding: 1.5rem;">
+            Second Div
+            <p id = "spara" style="background-color: orange; padding: 1rem;">Second para
+            </p>
+        </div>
+    </div>
+
+    <script>
+
+        let paraelement = document.getElementById("fpara");
+
+        console.log(paraelement.style);
+
+        paraelement.style.backgroundColor = "blue"; // In this we can only handle single inline element and we cannot apply multiple properties
+
+        
+        // The drawback can be reduced by using the cssText
+        let secondelement = document.getElementById("sdiv");
+
+        secondelement.style.cssText;  // This will return the CSS property of the element
+
+        secondelement.style.cssText = "background-color:black; color : white; padding : 1rem";
+
+
+        // The setAttribute() method allows you to add or update attributes of an HTML element dynamically using JavaScript.
+
+        let fdiv = document.getElementById("fdiv");
+
+        fdiv.setAttribute('class' , 'divclass');  // This will add a class in the fdiv with the name divclass
+
+        fdiv.setAttribute('style', 'padding : 1rem');  // This will remove the other prev property in the style and then add the new property which is padding only
+
+        
+        fdiv.className; // This will give the name of all classes of the element 
+
+        fpara.classList;  // Multiple property are availble in class List
+
+        fpara.classList.add("fourthclass");
+
+        fpara.classList.remove('thirdclass');
+
+        fpara.classList.toggle('secondclass'); // In this case the class is present so it will be removed
+
+        fpara.classList.toggle('secondclass'); // In this case the class is not present so it will be added
+
+        fpara.classList.contains('firstclass'); // This will return true of the class is present or not
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
