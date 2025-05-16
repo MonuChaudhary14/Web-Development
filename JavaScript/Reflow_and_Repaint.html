@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflow and Repaint</title>
+</head>
+
+<body>
+
+    <script>
+        let start = performance.now();
+
+        for (let i = 1; i <= 10; i++) {
+            let para = document.createElement('p');
+            para.textContent = "This is " + i + " para";
+            document.body.appendChild(para);
+        }
+
+        let end = performance.now();
+        console.log("Total time taken: " + (end - start) + " ms");
+
+
+        /*
+         1. Reflow (aka Layout)
+    Reflow happens when the browser calculates the position and size of elements in the document.
+    
+    🧭 Triggered By:
+    Adding/removing elements from the DOM
+    
+    Changing size-related styles (width, height, padding, border, margin, font-size, etc.)
+    
+    Changing layout-related properties (display, position, top, left, etc.)
+    
+    Calling layout properties like .offsetHeight, .scrollTop, etc. (forces layout calculation)
+    
+
+
+         2. Repaint
+        Repaint happens when the browser redraws the pixels of an element — but doesn't change layout.
+
+        🧭 Triggered By:
+        Changes to styles like color, background-color, visibility, text-decoration, box-shadow, etc.
+
+        Changes that affect appearance but not size or position
+
+    
+        */
+
+
+
+
+
+
+        // Document Fragment
+        /*
+        A DocumentFragment is a lightweight container for holding DOM elements. It's not part of the live DOM, so manipulating it doesn’t cause reflows or repaints until you insert it into the document.*/
+
+
+        let fragment = document.createDocumentFragment();
+
+        for(let i = 1; i <= 100; i++){
+            let para = document.createElement('p');
+            para.textContent = "This is para "+ i;
+            fragment.appendChild(para);  // No reflow and repaint is done
+        }
+
+        document.body.appendChild(fragment); // 1 reflow and repaint
+
+
+    </script>
+
+</body>
+
+</html>

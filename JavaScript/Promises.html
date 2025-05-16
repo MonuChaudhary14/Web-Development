@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    This is promise page
+
+
+    <script>
+
+        // Promises are used to handle asynchronous operations, such as data fetching, file reading, or timers. A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+        /*
+        Promise States
+        1.Pending – Initial state, neither fulfilled nor rejected.
+
+        2.Fulfilled – Operation completed successfully (resolve called).
+
+        3.Rejected – Operation failed (reject called).
+        */
+
+        let promise = new Promise( (resolve , reject) => {
+                console.log("Monu");
+                resolve(1001);  // By appyling this, the promise is resolved or fulfilled so it changes the status 
+
+                // This will mark the status of promise to resolve and show the error which is provided
+                reject(new Error("This promise is not fulfilled"));
+
+        });
+
+        console.log(promise);   // This will show the status of promise , there is no need to use console.log in inspect (console) mode
+
+        function sayMyName(){
+            console.log("I am Monu Chaudhary");
+        }
+
+        // Asynchronous Code 
+        setTimeout(sayMyName, 5000);
+
+        // Another way 
+
+        let promise2 = new Promise( (resolve, reject) => {
+            setTimeout(function sayMyName(){
+
+                console.log("My name is Monu Chaudhary");
+
+            } , 5000);
+            resolve(1);  // This message will be shown in the first then block of this promise
+
+            reject("This is new error");
+        });
+
+        let promise3 = new Promise ((resolve , reject) => {
+
+            let success = true;
+
+            if(success){
+                resolve("Promise Fulfilled");
+            }
+            else{
+                reject("Promise Rejected");
+            }
+
+        });
+
+        promise3.then((message) => {
+            console.log("The message is "+ message);
+        }).catch((error) => {
+            console.log("Error: "+error);
+        }); 
+        
+        // We can add multiple"then" blocks in this
+        promise2.then((message) => {
+            console.log("First message: "+message);
+            return "Promise fulfilled second message";  // This message will be shown by the next 'then' block
+        }).then((message) => {
+            console.log("Second message: "+message);
+            return "Promise Fulfilled third message"; // This message will be shown by the next 'then' block
+        }).then((message) => {
+            console.log("Third message: "+message);
+        }).catch((error) =>{
+            console.log(error);
+        }).finally((message) => {
+            console.log("This is the finally block which will execute no matter the prmoise is fulfilled or not");
+        });
+
+
+        let promises1 = new Promise((resolve, reject) =>{
+            setTimeout(resolve , 1000 , "First");
+        });
+        let promises2 = new Promise((resolve, reject) =>{
+            setTimeout(resolve , 5000 , "Second");
+        });
+        let promises3 = new Promise((resolve, reject) =>{
+            setTimeout(resolve , 7000 , "Third");
+        });
+
+        // This is also a promise which will be resolved if all promises are resolved
+        Promise.all([promises1, promises2, promises3]) // In this order the promises are printed
+        .then((values) => {
+            console.log(values);
+        })
+        .catch((error) =>{
+            console.log(error);
+        });
+
+
+
+    </script>
+</body>
+</html>

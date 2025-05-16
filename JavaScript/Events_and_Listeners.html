@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <button>Click Me</button> <!-- This is the event target-->
+
+    <div >
+        <p id="fpara">
+            Hello
+        </p>
+        <p id = "div"> This is the second para</p>
+    </div>
+
+    <a href = "https://www.youtube.com" id = "anchor">Press</a>
+
+    <div id = "wrapper">
+        <p id = "first">First Para</p>
+        <p id = "second">Second Para</p>
+        <p id = "third">Third Para</p>
+        <p id = "fourth">Fourth Para</p>
+    </div>
+
+
+    <script>
+        /*
+ In JavaScript, an event is an action or occurrence that happens in the browser that the JavaScript code can respond to. Events can be triggered by users (like clicking a button or pressing a key), the browser (like a page loading or resizing), or programmatically. */
+
+
+
+        // monitorEvents(document);  // This will print all the events
+
+        // unmonitorEvents(document);  // This will stop monitoring(printing) events
+
+
+
+
+        /*monitorEvents() and unmonitorEvents() are not standard JavaScript functions — they are only available in Chromium-based browser developer consoles (like Chrome DevTools) for debugging purposes. They are not available in the global JavaScript scope when running scripts in an HTML page.*/
+
+
+
+        // Event Target =>
+        /*
+        event.target is a property of the event object. It refers to the actual DOM element that triggered the event. This is useful when you have a single event listener that could apply to multiple elements, and you want to know which specific element was interacted with.
+        */
+
+        // Event Listener
+        /*
+        It will define what will happen when some action is done on event target
+
+
+        */
+
+        // Functions of Listener
+        // 1. addEventListener()
+        // 2. removeEventListener()
+
+        function changeText() {
+            // let fpara = document.getElementById("fpara");
+            fpara.style = "background-color :yellow";
+            fpara.textContent = "Hello Monu Chaudhary";
+        }
+
+        function change(event){
+            console.log(event);
+            console.log("This is the event");
+        }
+
+        let fpara = document.getElementById("fpara");
+
+        fpara.addEventListener('click', changeText); // Not to use the parentheses which will automatically call the function without can click
+
+
+        // Another method to call a event listener
+        fpara.addEventListener('mouseover', function () {
+            fpara.style = "background-color:blue";
+            fpara.textContent = "This is new text";
+        })
+
+
+        fpara.removeEventListener('click', changeText);
+
+        // We cannot use the remove event Listener when we define the fucntion with the listener because it will treat it as an seperate object or reference
+
+
+        // Life Cycle or Phases of Event
+        /*
+        1.Capturing Phase (a.k.a. Capture phase)
+        2.Target Phase
+        3.Bubbling Phase
+
+        Capturing Phase:
+        In the capturing phase, the event starts from the root of the DOM tree (document) and travels down toward the target element. You can think of it as “from parent to child.”
+
+        By default, JavaScript event listeners are triggered during the bubbling phase, but you can specifically tell the browser to listen during the capturing phase.
+
+
+
+        2. Target Phase
+        The event has reached the actual element that was clicked (or triggered).
+
+        Event listeners on the target element are invoked regardless of capture/bubble, depending on how they're registered.
+
+
+
+        3. Bubbling Phase
+        After hitting the target, the event bubbles back up the DOM from the target to the root.
+
+        This is the default behavior for addEventListener.
+
+        */
+
+
+        // By default, the event listener is applied to the bubbling phase
+
+        fpara.addEventListener('click', changeText, true);  // This will mark the useCapture value to true due to which the Listener is applied to the Capture phase
+
+
+
+
+        // Event Object
+        /*
+        When an event (like a click, submit, keydown, etc.) occurs in JavaScript, the browser automatically creates an event object and passes it to the event handler.
+
+        This event object contains detailed information about the event, such as:
+
+        What type of event it was (click, keydown, etc.)
+
+        Which element triggered it
+
+        Mouse position (for mouse events)
+
+        Key pressed (for keyboard events)
+
+        Methods to stop propagation or prevent default behavior
+
+
+        The listener function gets the event and we can print it and use it anywhere
+
+
+        */
+
+        let div = document.getElementById("div");
+
+        div.addEventListener('click' , change);
+
+
+
+        /*
+        In the browser, many HTML elements have built-in (default) behaviors that are triggered by user actions — like clicks or keypresses.
+
+        These are called default actions.
+
+*/
+
+
+        // We can prevent the default behavior of a function
+
+
+        let anchor = document.getElementById("anchor");
+
+        anchor.addEventListener('click' , function(event){
+            event.preventDefault();
+            anchor.textContent = "Click Done";
+        })
+
+
+        // Avoiding Two Many listeners
+
+        let paras = document.querySelectorAll('p');
+
+        function addalert(event){
+
+            if(event.target.nodeName === "P"){
+
+            alert('You have clicked on ' + event.target.textContent);
+                // Due to this only the para content will be shown
+            }
+
+            // The event.target property refers to the exact DOM element that triggered the event — i.e., the element where the event originated.
+
+            // It's especially useful when:
+
+            // You have one event listener for multiple elements.
+
+            // You want to handle events dynamically
+
+
+
+        }
+
+        for(let i = 0; i < paras.length; i++){
+            let para = paras[i];
+
+            // para.addEventListener('click', function(){
+            //     alert("You have clicked on para "+i);
+            // });
+
+            para.addEventListener('click', addalert);
+        }
+
+
+        // We can also directly give the div as a listener 
+
+        let divpara = document.getElementById('wrapper');
+        
+        divpara.addEventListener('click', addalert); 
+        // The add alert contain the target property which point to a specifc element which trigger the element so it shows which para is been connected
+
+        // But if we click on the empty space , then it will print all the paras
+
+
+
+        /*
+            🧱 What is DOMContentLoaded in JavaScript?
+            DOMContentLoaded is a browser event that fires when the initial HTML document is completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+
+            ✅ Why use it?
+            JavaScript code often interacts with DOM elements. If you try to access or modify DOM elements before they’re fully loaded, you'll get errors like null or undefined.
+
+            Using DOMContentLoaded ensures the DOM is ready for JavaScript to safely run.
+
+            ✅ Syntax
+            */
+            document.addEventListener("DOMContentLoaded", function () {
+            // Your code here runs AFTER the HTML is fully loaded
+            console.log("DOM is fully loaded");
+            });
+        
+        
+
+
+    </script>
+
+</body>
+
+</html>

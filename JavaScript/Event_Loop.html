@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Synchronous code-> 
+        // Synchronous code runs step-by-step, in the exact order it appears. Each operation must finish before the next one starts
+
+
+        // Asynchronous code
+        // Asynchronous code allows JavaScript to continue running other tasks without waiting for a slow operation (like network request, file read, or timer) to finish.
+
+        /*
+        Why Use Async?
+        JavaScript runs on a single thread.
+
+        Without async, slow tasks freeze the page.
+
+        Async ensures a smooth, responsive UI.
+        */
+
+
+        // Blocking 
+        /*
+        Blocking refers to code execution that prevents further code from running until the current task is completely finished.
+
+        Since JavaScript is single-threaded (it runs one task at a time), any long-running or blocking operation will pause everything else, including:
+
+        Rendering the page
+
+        Responding to user input
+
+        Handling animations or other events
+        */
+
+        // Event Loop
+        /*
+        The Event Loop is the core mechanism that allows JavaScript to handle asynchronous operations while remaining single-threaded.
+
+        It enables non-blocking behavior, so tasks like fetching data, reading files, or waiting for a timer don't freeze the main thread.
+
+
+
+        How It Works
+        Call Stack
+
+        Where function calls are made and executed.
+
+        It's synchronous (runs one task at a time).
+
+        Web APIs / Node APIs
+
+        Browser or Node.js handles things like timers, HTTP requests, DOM events.
+
+        Callback Queue (Task Queue)
+
+        When Web APIs finish (like a setTimeout), they push callbacks here.
+
+        Event Loop
+
+        Constantly checks if the call stack is empty.
+
+        If yes, it moves a task from the queue into the stack and runs it.
+
+
+
+
+
+
+
+        */
+
+
+
+
+
+    </script>
+
+</body>
+</html>
