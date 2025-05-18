@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // A closure is a function that remembers the variables from its outer scope, even after that outer function has finished executing
+
+        // Closure is a function of its function and its lexial scope(req data , surrounding state)
+
+        let name = "Monu Chaudhary";
+
+        function init(){
+            let name = "Monu"; // name is a local variable created by init 
+
+            function displayName(){
+                // displayName() is the inner function, that forms a closure
+                let name = "Chaudhary";
+                console.log(name); // use variable declared in the parent function
+
+            }
+            return displayName;  //return function reference
+        }
+
+        let inner = init();  // In this , it returns the reference of displayName   
+
+        // console.log(init);
+
+        inner();  // In this, the name varible is not destoyed, because when there is a nested function , the varible is binded to the function.
+        // No copy is created , instead is only some reference
+
+
+    </script>
+
+</body>
+</html>
