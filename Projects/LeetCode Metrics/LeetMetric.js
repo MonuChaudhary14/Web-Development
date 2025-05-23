@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             searchButton.textContent = "Searching...";
             searchButton.disabled = true;
-            statsContainer.style.setProperty("display" ,hidden)
+            // statsContainer.style.display = "none";  
 
             // const response = await fetch(url); when using the first method
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             if (!response.ok) {
-                throw new Error("Unable to fetch the USer Details");
+                throw new Error("Unable to fetch the User Details");
             }
             const parsedData = await response.json();
 

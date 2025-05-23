@@ -24,7 +24,7 @@ console.log(b);  /* This shows undefined behavior*/
 let a = "Monu";
 console.log(a);
 
-a = 45.78;
+a = 45.78;   // It is a feature of dynamic typing (means we can give any variable any type of value)
 console.log(a);
 
 
@@ -65,16 +65,16 @@ console.log(null === null);
 const k1 = Symbol();
 const k2 = Symbol("identifier for k2");
 
-myobj = {};
+myobj = {};  
 
 myobj[k1] = "Harry";
 myobj[k2] = "Rohan";
 myobj["name"] = "Monu Poonia";
 myobj[4] = "four";
-
+// We can access the object by two methods , first we can use '.' or '[]'
 console.log();
 console.log(myobj);
-console.log(myobj[k1]);
+console.log(myobj[k1]);   
 console.log(myobj.k2);  // This will give undefined and we cannot use this to get the value
 
 console.log(myobj.name); 
@@ -92,6 +92,26 @@ console.log(JSON.stringify(myobj));
 // When we use this the symbols are ignored
 
 
+// Arrays in JS -> We can store any type of data in array
+
+let arr = ['1' , 'Monu' , 1.25 , true, null , undefined];
+
+console.log(arr[0]);
+console.log(arr[3]);
 
 
+
+
+let rectangle = {
+    length : 1, 
+    breadth : 2 , 
+
+
+    draw : function() {  //  This will create a function with name draw
+        console.log('draw');
+    }
+}
+
+
+console.log(rectangle.draw());
 
