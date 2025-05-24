@@ -1,0 +1,15 @@
+// The differnce between primitive type and reference type is that 
+
+/*
+When we create a variable and assign another variable with the prev variable
+
+Primitive are copied 
+
+Refernce are not copied
+
+*/
+let a = 5;
+let b = a;  // In this a copy is created 
+
+let obj1 = {value};
+let obj2 = obj1;  // In this the obj2 points to the same address as that of obj1

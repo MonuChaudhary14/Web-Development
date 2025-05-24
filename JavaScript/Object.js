@@ -1,132 +1,179 @@
-let shape = {  // This is a object 
-
-    length: 1,  // These are the properties
+// ---------------------------
+// Basic Object Example
+// ---------------------------
+let shape = {
+    length: 1,
     breadth: 2,
-
-    // If we create a function in a object , then it is called as method
 
     area: function () {
         console.log('The area is ' + this.length * this.breadth);
     }
+};
 
-}
 shape.area();
 
-shape.height = 1;  // This will be added in the object
+shape.height = 1;  // Add new property
+console.log(shape.height);  // Output: 1
 
-console.log(shape.height);
-
-console.log("This is the constrctor "+shape.constructor);
+console.log("This is the constructor: " + shape.constructor);  // Output: function Object()
 
 delete shape.height;
-
-console.log(shape.height);
-
+console.log(shape.height);  // Output: undefined
 
 
-
-
-// Object Creation 
-// 1. Factory Function
-// 2. Constructor Function
-
-
-// 1. Factory Function
-
-function createshape() {
-
-    // We can also directly return the function just remove 'let'
-
-    /*return */let shape = {  // This is a object 
-
-        length: 1,  // These are the properties
+// ---------------------------
+// Factory Function (1st Way)
+// ---------------------------
+function createShape() {
+    return {
+        length: 1,
         breadth: 2,
 
-        // If we create a function in a object , then it is called as method
-
         area: function () {
             console.log('The area is ' + this.length * this.breadth);
         }
-
-    }
-    return shape;
+    };
 }
 
-let rectangle = createshape();
-
+let rectangle = createShape();
+console.log('\nRectangle object:', rectangle);
 rectangle.area();
 
-function createshape1(length , breadth) {
 
-    /*return */let shape = {  // This is a object 
-
-        length,   // This will give the value of length which is given as parameter
+// ---------------------------
+// Factory Function with Parameters
+// ---------------------------
+function createShape1(length, breadth) {
+    return {
+        length,
         breadth,
-
-        // If we create a function in a object , then it is called as method
 
         area: function () {
             console.log('The area is ' + this.length * this.breadth);
         }
-
-    }
-    return shape;
+    };
 }
 
-let longrectangle = createshape1(5, 4);
-longrectangle.area();
+let longRectangle = createShape1(5, 4);
+longRectangle.area();  // Output: 20
 
 
-// this keyword represnt the current object
-
+// ---------------------------
+// Simple Object with Method
+// ---------------------------
 let newObject = {
-    length  : 78, 
-    breadth :12, 
-    height :3, 
+    length: 78,
+    breadth: 12,
+    height: 3,
 
-    volume : function(){
-        console.log("The volume of the object is "+ this.length*this.breadth*this.height);
+    volume: function () {
+        console.log("The volume is " + this.length * this.breadth * this.height);
     }
-}
+};
 
-// 2 . Using Constructor function : It intilised the value/defining
+newObject.volume();  // Output: volume
 
-function shapes(){
 
+// ---------------------------
+// Constructor Function
+// ---------------------------
+function MyShape() {
     this.length = 45;
     this.breadth = 12;
     this.height = 3;
-    
-    this.volume = function(){
-        console.log("The volume of the shape is "+ this.length*this.breadth*this.height);
-    }
 
+    this.volume = function () {
+        console.log("The volume is " + this.length * this.breadth * this.height);
+    };
 }
 
-console.log(shapes.constructor);
+console.log("\nConstructor of MyShape function:");
+console.log(MyShape.constructor);  // Output: Function (built-in)
 
-let cuboid = new shapes();
-
-console.log(cuboid);
-
-
-// Another Method to 
+let cuboid = new MyShape();
+console.log("Constructor of cuboid object:", cuboid.constructor);  // Output: MyShape
+console.log("Cuboid object:", cuboid);
+cuboid.volume();
 
 
+// ---------------------------
+// Dynamic Function Constructor (Advanced)
+// ---------------------------
 let Rectangle2 = new Function(
     'length', 'breadth',
     `
     this.length = length;
     this.breadth = breadth;
-    this.volume = function() {
-        console.log("Volume of the cylinder is " + this.length * this.breadth);
+    this.area = function() {
+        console.log("Area is " + this.length * this.breadth);
     };
     `
 );
 
 let rect = new Rectangle2(2, 4);
+rect.area();  // Output: 8
 
-console.log(rect.volume());
-// This shows a undefined value because the function is itself does not returning anything so
-// a undefined value is printed 
+if ('length' in Rectangle2) {
+    console.log("Length is present in Rectangle2");
+} else {
+    console.log("Length is not present in Rectangle2");
+}
 
+
+// ---------------------------
+// Object Cloning via Iteration
+// ---------------------------
+let obj3 = {};
+
+for (let key in newObject) {
+    obj3[key] = newObject[key];  // Corrected key assignment
+}
+
+console.log("\nCloned object (obj3):");
+for (let key in obj3) {
+    console.log(key, obj3[key]);
+}
+
+// ---------------------------
+// Object Cloning via Assiging
+// ---------------------------
+let obj4 = {};
+obj4 = Object.assign({}, newObject, shape);  // src dest
+
+console.log("\nCloned object (obj4):");
+for (let key in obj4) {
+    console.log(key, obj4[key]);
+}
+
+// ---------------------------
+// Object Cloning via Spread
+// ---------------------------
+let obj5 = {...newObject};
+
+console.log("\nCloned object (obj5):");
+for (let key in obj5) {
+    console.log(key, obj5[key]);
+}
+
+
+// ---------------------------
+// String as Object
+// ---------------------------
+let lastname = new String("Jaat"); 
+// This is a Object String
+
+let firstname = 'Monu';
+
+console.log(typeof(firstname));
+console.log(typeof(lastname));
+
+
+// ---------------------------
+// Conversion of Primitive String into Object String
+// ---------------------------
+
+// When we use . with primitive string then it is treated as object
+
+firstname.length; // We can use any function to make it Object
+
+firstname.includes('Monu');
