@@ -21,7 +21,7 @@ try{
     console.log("This will not be executed");
 
 }
-catch(err){   // e is the name of the error 
+catch(err){   // err is the name of the error 
    
     // Here we define what will happen when the error is find out
     console.log("x is not defined");

@@ -208,8 +208,78 @@ console.log(parts);
 
 // Sorting an Array 
 
-values.sort();
+values.sort();  // Internally , sort function convert the elements into string and then sort them
 
 console.log(values);
+
+// Find out how to sort using predicate function
+let values1 = [5, 48, 89, 4, 6, 1, 3, 1];
+
+let sorted = values1.sort(function(integer1, integer2){
+    return integer1 - integer2;
+});
+
+console.log("The sorted array using custom comparator is", sorted);
+
+
+
+
+// Reverse the array
+
+values.reverse();
+
+console.log(values);
+
+
+// Filtering the array
+
+let integers = [1,2,-1,4,-6,7];
+
+let filtered = integers.filter(function(value){
+    return value >= 0;
+})
+
+console.log(filtered);
+
+let filtered2 = integers.filter(value => value <= 0);
+
+console.log(filtered2);
+
+
+
+
+// Mapping Arrays -> Map each element of array to something else
+
+ let mapping = [1, 2, 4, 5, 6];
+
+let mapped = mapping.map(function(value) {
+    return 'student_no: ' + value; // If we give array name then it will use all the element and then map them 
+    // Check one time by using this method of changing value by mapping 
+});
+
+console.log(mapped);
+
+
+// Mapping with Objects
+
+let num = [7, 8,-5,6,7];
+
+let filtered3 = num.filter(value => value >= 0);
+
+let items = filtered3.map(function(digit){
+    let obj = {value : digit};
+    return obj;  // We can also directly return the upper line
+})
+
+console.log(items);
+
+
+// Chaining
+
+let items2 = num.filter(value => value >= 0).map(h => {value : num});
+
+console.log(items2);
+
+
 
 
