@@ -282,4 +282,18 @@ console.log(items2);
 
 
 
+// Reducing an Array
+let arr = [1,2,3,4];
 
+// reduce function require two values which are callback function and inital value
+
+let totalsum = arr.reduce((accumulator , currentValue) => accumulator + currentValue , 0);
+// In the above code 0 is the initial value of accumulator
+// In this accumulator behave as a intital value in loop which can be total = 0 
+// the current value behave as value of arr which will be added in the accumulator
+
+// If we do not write intital value , the the accumulator initial is the first value of the array and it will start from the second value
+
+
+
+console.log(totalsum);
