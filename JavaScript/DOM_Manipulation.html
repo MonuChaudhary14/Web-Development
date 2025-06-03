@@ -15,19 +15,19 @@
 
     <div id="fdiv">
 
-        <p class "fpara">
-            This is my first 
+        <p class="fpara">
+            This is my first
             <span>
                 text
-        </span>
-    </p>
+            </span>
+        </p>
 
         <p>
-            This is my second 
+            This is my second
             <span>
                 text
-        </span>
-    </p>
+            </span>
+        </p>
 
     </div>
 
@@ -38,12 +38,24 @@
 
         // Methods to Select Elements
 
-        document.getElementById("First_Para"); // When we give this in the console it will represent the html code of the element with that id
+        document.getElementById("First_Para"); // When we give this in the console it will represent/give the html code of the element with that id
+
+        //  If we use a Id which is not present then it will return null
+        // It returns a single object when because id is unique for every element
 
         document.getElementsByClassName("para");
+        document.getElementsByClassName("hidden");
+
+
 
         document.getElementsByTagName('p');
 
+        // element by class Name and tag Name both uses document object
+        // Two methods return multiple items
+        // The method provide list of element with the same tag or id in the form of HTML Collection which is not a array
+
+
+        // It has only single output
 
         document.querySelector('.para');  // In this only the first element with the class para is shown all the other are removed
 
@@ -55,10 +67,20 @@
 
         document.querySelectorAll('p'); // It will return all the para elements
 
+        // We can also equated the query selector like
+
+        let query = document.querySelector('p');
+
+        console.log(query);
+
+
+
         // Hack -> When we inspect the code in the browser and select the element then there is some $code($0) in that which can be used to find the value like 
-        // $0
+        // $0 -> It represents the element which is selected and we can also apply properties on it
 
+        // let selected = $0;
 
+        // selected.className; // This will only work when we select a element in the webpage and then give this commmand to the console
 
 
 
@@ -69,6 +91,9 @@
         // 3. text-content
         // 4. innerText
 
+        // To get the element ->
+        let content = document.getElementById('First_Para').innerHTML; // This will now contain the whole HTML code or content of that particular element
+
         document.getElementById('First_Para').innerHTML = "This is the updated new Para"; // InnerHTML change the content inside the para
 
         /*
@@ -78,69 +103,75 @@
         */
 
         let header = document.getElementById("First_Para");
-        header.outerHTML =  '<h2>This is header </h2>';
+        header.outerHTML = '<h2>This is header </h2>';
+
+
+
+        // We can change the content using textcontent
+        let element = document.getElementById("fdiv");
+
+        element;    // This will show the whole div tag
+
+        element.textContent;  // This will return the whole text inside the element even if it contain some tags indside it , it still consider them as text
+
+        /*
+        All text inside the element (including hidden)
+        Faster (doesn’t trigger reflow)
+        Ignores tags, just gives plain text
+        Preserves all whitespace
+        */
+
+        // Check the difference between textContent and innerHTML
+
+        element.innerText;
+        /*
+        Only visible text (ignores hidden elements)
+        Slower (triggers layout reflow)
+        Also ignores tags
+        Collapses whitespace like rendered content
+
+        If we make any element hidden then it will not give the hidden element
+        */
 
 
         
-            // We can change the content using textcontent
-            let element = document.getElementById("#fdiv"); 
-
-            element;    // This will show the whole div tag
-
-            element.textContent;  // This will return the whole text inside the element
-            /*
-            All text inside the element (including hidden)
-            Faster (doesn’t trigger reflow)
-            Ignores tags, just gives plain text
-            Preserves all whitespace
-            */
-
-            element.innerText;
-            /*
-            Only visible text (ignores hidden elements)
-            Slower (triggers layout reflow)
-            Also ignores tags
-            Collapses whitespace like rendered content
-
-            If we make any element hidden then it will not give the hidden element
-            */
 
 
 
 
-            // Add/Create element
+        // Add/Create element
 
-            let fheading = document.createElement('h1');
-            fheading.textContent = "This is H1";
+        let fheading = document.createElement('h1');
+        fheading.textContent = "This is H1";
 
-            // Where i have to append this
+        // Where i have to append this
 
-            let bodytag = document.querySelector('body');
+        let bodytag = document.querySelector('body');
 
-            bodytag.appendChild(fheading);
-
-
-            let mydiv = document.querySelector("#fdiv");
-
-            let newElement = document.createElement('span');
-
-            newElement.textContent = "This is span tag";
-
-            mydiv.insertAdjacentElement('beforebegin', newElement);
-            mydiv.insertAdjacentElement('afterbegin', newElement);
-            mydiv.insertAdjacentElement('beforeend', newElement);
-            mydiv.insertAdjacentElement('afterend', newElement);
+        bodytag.appendChild(fheading);
 
 
+        let mydiv = document.querySelector("#fdiv");
+
+        let newElement = document.createElement('span');
+
+        newElement.textContent = "This is span tag";
+
+        mydiv.insertAdjacentElement('beforebegin', newElement);
+        mydiv.insertAdjacentElement('afterbegin', newElement);
+        mydiv.insertAdjacentElement('beforeend', newElement);
+        mydiv.insertAdjacentElement('afterend', newElement);
 
 
-            // Removal -> Opposite of appendchild
 
-            let parent = document.getElementById("fdiv");
 
-            let child = document.querySelector("fpara");
+        // Removal -> Opposite of appendchild
 
-            parent.removeChild(child);
+        let parent = document.getElementById("fdiv");
+
+        let child = document.querySelector(".fpara");
+
+        parent.removeChild(child);
 
 
 
