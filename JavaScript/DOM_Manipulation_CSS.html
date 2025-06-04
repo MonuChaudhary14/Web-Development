@@ -23,6 +23,14 @@
 
     <script>
 
+        /* There are multiple elements to get and update the css property
+        1. .style
+        2. .cssText
+        3. .setAttribute
+        4. .className
+        5. .classList
+        */
+
         let paraelement = document.getElementById("fpara");
 
         console.log(paraelement.style);
@@ -40,15 +48,21 @@
 
         // The setAttribute() method allows you to add or update attributes of an HTML element dynamically using JavaScript.
 
-        let fdiv = document.getElementById("fdiv");
+        // We can also give id to this 
 
+        let fdiv = document.getElementById("fdiv");
+        
         fdiv.setAttribute('class' , 'divclass');  // This will add a class in the fdiv with the name divclass
 
-        fdiv.setAttribute('style', 'padding : 1rem');  // This will remove the other prev property in the style and then add the new property which is padding only
+        fdiv.setAttribute('style', 'padding : 1rem margin : 1rem');  // This will remove the other prev property in the style and then add the new property which is padding only
 
         
-        fdiv.className; // This will give the name of all classes of the element 
+        let classes = fdiv.className; // This will give the name of all classes of the element 
 
+        // We can use multipe properties of this function
+        console.log(classes.split(' '));
+
+ 
         fpara.classList;  // Multiple property are availble in class List
 
         fpara.classList.add("fourthclass");

@@ -4,177 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
+    <title>DOM Manipulation</title>
 </head>
 
 <body>
 
-    <p id="First_Para">This is the first para</p>
-    <p class="para">This is the second para</p>
-    <p class="para">This is the third para</p>
+    <p id="firstPara">This is the first paragraph</p>
+    <p class="para">This is the second paragraph</p>
+    <p class="para">This is the third paragraph</p>
 
-    <div id="fdiv">
-
+    <div id="mainDiv">
         <p class="fpara">
             This is my first
-            <span>
-                text
-            </span>
+            <span>text</span>
         </p>
 
-        <p>
+        <p id = "spara">
             This is my second
-            <span>
-                text
-            </span>
+            <span>text</span>
         </p>
-
     </div>
-
-
-
 
     <script>
 
         // Methods to Select Elements
 
-        document.getElementById("First_Para"); // When we give this in the console it will represent/give the html code of the element with that id
+        document.getElementById("firstPara");
+        // Fetches the element with the specified ID
 
-        //  If we use a Id which is not present then it will return null
-        // It returns a single object when because id is unique for every element
+        // If we use an ID that does not exist, it will return null.
+        // Since ID is unique, it always returns a single object.
 
         document.getElementsByClassName("para");
         document.getElementsByClassName("hidden");
-
-
+        // Returns multiple elements in an HTMLCollection (not an array!)
 
         document.getElementsByTagName('p');
+        // Selects all <p> elements
 
-        // element by class Name and tag Name both uses document object
-        // Two methods return multiple items
-        // The method provide list of element with the same tag or id in the form of HTML Collection which is not a array
+        document.querySelector('.para');
+        // Only the first element with class "para" is selected; others are ignored.
 
+        document.querySelector("#firstPara");
+        document.querySelector('p');
+        // Selects only the first <p> element and ignores others.
 
-        // It has only single output
+        // To select all matching elements, use querySelectorAll
+        document.querySelectorAll('p');
 
-        document.querySelector('.para');  // In this only the first element with the class para is shown all the other are removed
+        // Storing a queried element into a variable
+        let selectedPara = document.querySelector('p');
 
-        document.querySelector("#First_Para");
+        console.log(selectedPara); // Logs the first <p> element
 
-        document.querySelector('p');  //  In this only the first para is returned it will ignore all the other paras    
+        // Get and Update Existing Elements
+        let content = document.getElementById('firstPara').innerHTML;
+        // Retrieves the full HTML inside the element
 
-        // TO avoid this problem
-
-        document.querySelectorAll('p'); // It will return all the para elements
-
-        // We can also equated the query selector like
-
-        let query = document.querySelector('p');
-
-        console.log(query);
-
-
-
-        // Hack -> When we inspect the code in the browser and select the element then there is some $code($0) in that which can be used to find the value like 
-        // $0 -> It represents the element which is selected and we can also apply properties on it
-
-        // let selected = $0;
-
-        // selected.className; // This will only work when we select a element in the webpage and then give this commmand to the console
-
-
-
-        // Get and Update Exising Elements
-
-        // 1. innerHTML
-        // 2. outerHTML
-        // 3. text-content
-        // 4. innerText
-
-        // To get the element ->
-        let content = document.getElementById('First_Para').innerHTML; // This will now contain the whole HTML code or content of that particular element
-
-        document.getElementById('First_Para').innerHTML = "This is the updated new Para"; // InnerHTML change the content inside the para
+        document.getElementById('firstPara').innerHTML = "This is the updated paragraph";
+        // Updates the inner content
 
         /*
-        outerHTML is a DOM property that returns the entire HTML element as a string, including the element itself — not just its content.
-
-        You can also use outerHTML to replace the element with new HTML.
+        outerHTML returns the entire element as a string, including the element itself.
+        It can also replace the element with new HTML.
         */
+        let header = document.getElementById("firstPara");
+        header.outerHTML = '<h2>This is a header</h2>';
 
-        let header = document.getElementById("First_Para");
-        header.outerHTML = '<h2>This is header </h2>';
-
-
-
-        // We can change the content using textcontent
-        let element = document.getElementById("fdiv");
-
-        element;    // This will show the whole div tag
-
-        element.textContent;  // This will return the whole text inside the element even if it contain some tags indside it , it still consider them as text
+        // Using textContent to extract all text inside an element
+        let container = document.getElementById("mainDiv");
+        console.log(container.textContent);
+        // Returns all text inside the div, treating nested tags as plain text.
 
         /*
-        All text inside the element (including hidden)
-        Faster (doesn’t trigger reflow)
-        Ignores tags, just gives plain text
-        Preserves all whitespace
+        Difference between textContent and innerText:
+        - textContent extracts all text, even hidden content.
+        - innerText only extracts visible text and ignores hidden elements.
         */
+        console.log(container.innerText);
 
-        // Check the difference between textContent and innerHTML
+        // Adding/Creating Elements Dynamically
+        let newHeading = document.createElement('h1');
+        newHeading.textContent = "This is an H1 heading";
 
-        element.innerText;
-        /*
-        Only visible text (ignores hidden elements)
-        Slower (triggers layout reflow)
-        Also ignores tags
-        Collapses whitespace like rendered content
+        // Append the new heading inside the body
+        // document.body.appendChild(newHeading);
+        let bodytag =  document.querySelector('body');
 
-        If we make any element hidden then it will not give the hidden element
-        */
+        bodytag.insertAdjacentElement('afterend', newHeading);
 
+        // Another way to add a paragraph (slower method)
+        let newParagraph = document.createElement('p');
+        let newTextNode = document.createTextNode("This is a new paragraph added dynamically.");
 
+        newParagraph.appendChild(newTextNode);
+        document.body.appendChild(newParagraph);
+
+        // Using insertAdjacentElement to insert an element in different positions
+        let mainDiv = document.querySelector("#mainDiv");
+        let newSpan = document.createElement('span');
+
+        newSpan.textContent = "This is a span tag";
+
+        mainDiv.insertAdjacentElement('beforebegin', newSpan);
+        // mainDiv.insertAdjacentElement('afterbegin', newSpan);
+        // mainDiv.insertAdjacentElement('beforeend', newSpan);
+        // mainDiv.insertAdjacentElement('afterend', newSpan);
+
+        // Removing an element (opposite of appendChild)
+        let parentDiv = document.getElementById("mainDiv");
+        let childElement = document.querySelector(".fpara"); // We can remove by class name , id , by selecting using querySelector/ get Element method
+
+        // The drawback of this method is that we have to know the parent element
+
+        parentDiv.removeChild(childElement);
+
+        let removed = document.getElementById('spara');
+
+        // getElementsByClassName() returns a collection, not a single element. ❌ remove() only works on individual elements, not collections. ✅ You must loop over the collection to remove elements one by one.
+
+        removed.remove();
         
-
-
-
-
-        // Add/Create element
-
-        let fheading = document.createElement('h1');
-        fheading.textContent = "This is H1";
-
-        // Where i have to append this
-
-        let bodytag = document.querySelector('body');
-
-        bodytag.appendChild(fheading);
-
-
-        let mydiv = document.querySelector("#fdiv");
-
-        let newElement = document.createElement('span');
-
-        newElement.textContent = "This is span tag";
-
-        mydiv.insertAdjacentElement('beforebegin', newElement);
-        mydiv.insertAdjacentElement('afterbegin', newElement);
-        mydiv.insertAdjacentElement('beforeend', newElement);
-        mydiv.insertAdjacentElement('afterend', newElement);
-
-
-
-
-        // Removal -> Opposite of appendchild
-
-        let parent = document.getElementById("fdiv");
-
-        let child = document.querySelector(".fpara");
-
-        parent.removeChild(child);
-
-
-
 
     </script>
 
