@@ -8,3 +8,6 @@ for(let key in obj1){
 }
 
 
+//key is a variable that stores the current property name (as a string) in each iteration.
+
+// object is the object whose properties you're looping through
