@@ -2,7 +2,7 @@
 
 let arr1 = [1, 2, 3, 4];              // Using square brackets
 let arr2 = new Array(5, 6, 7, 8);     // Using Array constructor
-let emptyArr = new Array(3);         // Creates an empty array of length 3
+let emptyArr = new Array(3);         // Creates an empty array of length 3 and no values on this
 
 
 // Insertion
@@ -14,11 +14,11 @@ arr1.push(8);
 arr1.unshift(7);
 
 // 3. Middle
-arr1.splice(2 , 0  , 'a' ,'b' , 'c');
+arr1.splice(2, 0, 'a', 'b', 'c');
 // In this function, 
 /*
 2 -> index
-0 -> delete elements
+0 -> delete elements 
 'a' , 'b' , 'c' -> characters
 
 */
@@ -28,7 +28,7 @@ console.log(arr1);
 
 // To find a element in a array, we can use this method but it is not preferred
 console.log(arr1.indexOf(4));  // 7 
-console.log(arr1.indexOf(7));  // -1
+console.log(arr1.indexOf(7));  // -1 
 
 
 // Another method to find the whether the element is present or not
@@ -46,18 +46,14 @@ console.log(arr1.indexOf(4, 3)); // Returns -1 if it does not exist in the given
 // Searching on References
 
 let course = [  // Array of Objects
-    {
-        no : 1 , fullname : 'Monu'
-    },
-    {
-        no : 2 , fullname : 'Chaudhary'
-    }
+    { no: 1, fullname: 'Monu'},
+    { no: 2, fullname: 'Chaudhary'}
 ];
 
-console.log(course.indexOf({no:1  , fullname: 'Monu'}));
-console.log(course.includes({no:1  , fullname: 'Monu'}));
-// This will give -1
-// Array.prototype.indexOf() checks for object references, not object content.
+console.log("Using indexOf" , course.indexOf({ no: 1, fullname: 'Monu' }));
+console.log("Using includes",course.includes({ no: 1, fullname: 'Monu' }));
+// Both will give -1 and false
+// Array.prototype.indexOf() as well as includes checks for object references, not object content.
 // In JavaScript, objects are compared by reference, not by value.
 
 
@@ -67,28 +63,28 @@ console.log(course.includes({no:1  , fullname: 'Monu'}));
 
 // A callback function in JavaScript is a function that is passed as an argument to another function, and it's typically invoked later, after some operation completes.
 
-let search1= course.find(function(item){  // here search1 is a predicate function
+let search1 = course.find(function (item) {  // here search1 is a predicate function
     return item.fullname === 'Monu';
 });
 
-console.log(search1);
+console.log("This is the value of Search1 -> ",search1);
 
 // Shortcut method to write the find function
 
 let search2 = course.find(item => item.fullname === 'Chaudhary');
 
-console.log(search2);
+console.log("This is the value of search2 -> ",search2);
 
 
 
 
 /* Removing a element from a array 
 1.Shift -> To remove from beginning 
-2.splice -> To remove from beginning
+2.splice -> To remove from middle
 3.pop -> To remove from end
 */
 
-let numbers = [1,4,5,2,4,7,9,6,1];
+let numbers = [1, 4, 5, 2, 4, 7, 9, 6, 1];
 
 console.log('Array before removing: ' + numbers);
 
@@ -96,7 +92,11 @@ numbers.pop();
 numbers.shift();
 numbers.splice(4, 1);   // This will remove 1 element from index 4
 
-console.log("Array after removing: " + numbers);  
+console.log("Array after removing: " + numbers);
+
+console.log();
+console.log();
+console.log();
 
 let number2 = numbers;
 let number3 = numbers;
@@ -104,34 +104,39 @@ let number3 = numbers;
 // Emptying an Array 
 
 // 1.
-numbers = []; 
+number2 = [];
 // This numbers array will now point to a new refernce and the prev refernce will automatically removed by garbage collector but there is a problem in this method but if we give another array and give it same refernce then the other array will contain the same data
 
-console.log(numbers);
-console.log(number2);
+console.log("Original Error",numbers);
+console.log("Empty Array",number2);
 
 // 2. By making number length = 0
 
-number2.length = 0;
+console.log();
+console.log();
+
+number3.length = 0; 
 
 // This will make all the array whose reference is same to zero
 
-console.log(number2);
+console.log(numbers);
 console.log(number3);
 
 
 //3. Using splice method
-number3.splice(0 , number3.length);
+number3.splice(0, number3.length);
 
-
+console.log();
+console.log();
+console.log();
 
 
 
 // Combining and Slicing Arrays
+``
 
-
-let first = [1,2,3,4];
-let second = [5,6,7,8];
+let first = [1, 2, 3, 4];
+let second = [5, 6, 7, 8];
 
 // combinig using concat
 let combine = first.concat(second);
@@ -141,7 +146,7 @@ console.log(combine);
 
 // removing element using slice
 
-let sliced = combine.slice(2, 4);
+let sliced = combine.slice(2, 4);  // It will slice from 2(including) to 4 (excluding)
 
 console.log(sliced);
 
@@ -151,10 +156,27 @@ console.log(sliced2);
 
 let fullslicing = combine.slice(); // This will slice all the element and a copy of array is formed
 
+// Combining and Slicing Of Objects
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const combined = { ...obj1, ...obj2 };
+console.log(combined); // { a: 1, b: 3, c: 4 }
+
+// Anotyher Method
+const combined1 = Object.assign({}, obj1, obj2);
+
+// Also find the way to splice the object
+
+console.log();
+console.log();
+console.log();
+
+
 
 // combine using spread operator
 
-let combine2 = [...first , 'a' , 15 , ...second , true];  // we can also add some charcters or numbers in between this
+let combine2 = [...first, 'a', 15, ...second, true];  // we can also add some charcters or numbers in between this
 
 console.log(combine2);
 
@@ -169,23 +191,30 @@ console.log(combined3);
 
 
 
-
+console.log();
+console.log();
+console.log();
 
 // Printing all the elements using loops
 
-let values = [1,45,23,7,89,2,6,78];
+let values = [1, 45, 23, 7, 89, 2, 6, 78];
 
-// for(let val of values){
-//     console.log(val);
-// }
+for(let val of values){
+    console.log(val);
+}
 
-values.forEach(function(v){
+console.log();
+console.log();
+
+values.forEach(function (v) {   // This include a callback function
     console.log(v);
 })
 
+values.forEach( v => console.log(v));
 
 
-
+console.log();
+console.log();
 
 // Joining Arrays
 
@@ -215,7 +244,7 @@ console.log(values);
 // Find out how to sort using predicate function
 let values1 = [5, 48, 89, 4, 6, 1, 3, 1];
 
-let sorted = values1.sort(function(integer1, integer2){
+let sorted = values1.sort(function (integer1, integer2) {
     return integer1 - integer2;
 });
 
@@ -233,11 +262,11 @@ console.log(values);
 
 // Filtering the array
 
-let integers = [1,2,-1,4,-6,7];
+let integers = [1, 2, -1, 4, -6, 7];
 
-let filtered = integers.filter(function(value){
+let filtered = integers.filter(function (value) {
     return value >= 0;
-})
+});
 
 console.log(filtered);
 
@@ -250,9 +279,9 @@ console.log(filtered2);
 
 // Mapping Arrays -> Map each element of array to something else
 
- let mapping = [1, 2, 4, 5, 6];
+let mapping = [1, 2, 4, 5, 6];
 
-let mapped = mapping.map(function(value) {
+let mapped = mapping.map(function (value) {
     return 'student_no: ' + value; // If we give array name then it will use all the element and then map them 
     // Check one time by using this method of changing value by mapping 
 });
@@ -262,12 +291,12 @@ console.log(mapped);
 
 // Mapping with Objects
 
-let num = [7, 8,-5,6,7];
+let num = [7, 8, -5, 6, 7];
 
 let filtered3 = num.filter(value => value >= 0);
 
-let items = filtered3.map(function(digit){
-    let obj = {value : digit};
+let items = filtered3.map(function (digit) {
+    let obj = { value: digit };
     return obj;  // We can also directly return the upper line
 })
 
@@ -276,24 +305,24 @@ console.log(items);
 
 // Chaining
 
-let items2 = num.filter(value => value >= 0).map(h => {value : num});
+let items2 = num.
+filter(value => value >= 0).
+map(h => { value: num });
 
 console.log(items2);
 
 
 
 // Reducing an Array
-let arr = [1,2,3,4];
+let arr = [1, 2, 3, 4];
 
 // reduce function require two values which are callback function and inital value
 
-let totalsum = arr.reduce((accumulator , currentValue) => accumulator + currentValue , 0);
+let totalsum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 // In the above code 0 is the initial value of accumulator
 // In this accumulator behave as a intital value in loop which can be total = 0 
 // the current value behave as value of arr which will be added in the accumulator
 
 // If we do not write intital value , the the accumulator initial is the first value of the array and it will start from the second value
-
-
 
 console.log(totalsum);

@@ -44,7 +44,7 @@ catch(err){
     throw new Error("Declare the variable first");
 }
 
-let errorcode = 100;   // This line will not be executed because we have throw the prev error due to which the execution is stopped
+let errorcode = 100;   // This line will not be executed because we have throw the prev error due to which the execution is stopped of the whole code
 
 if(errorcode == 100){
     throw new Error("Invalid JSON");
