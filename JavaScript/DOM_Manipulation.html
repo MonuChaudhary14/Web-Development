@@ -40,7 +40,14 @@
         // Returns multiple elements in an HTMLCollection (not an array!)
 
         document.getElementsByTagName('p');
-        // Selects all <p> elements
+        // Selects all <p> elements, this is also a HTML Collection
+
+
+            // Hack
+
+            // If we select an element and then we type $0 then ity will refer to that selected element
+
+    
 
         document.querySelector('.para');
         // Only the first element with class "para" is selected; others are ignored.
@@ -88,10 +95,15 @@
         newHeading.textContent = "This is an H1 heading";
 
         // Append the new heading inside the body
-        // document.body.appendChild(newHeading);
+        // document.body.appendChild(newHeading);  This will be added to the last of the element
         let bodytag =  document.querySelector('body');
 
-        bodytag.insertAdjacentElement('afterend', newHeading);
+        bodytag.insertAdjacentElement('afterend', newHeading);  // This is a method and it is called with two argument
+
+            // beforeBegin
+            // afterBegin
+            // beforeEnd
+            // afterEnd 
 
         // Another way to add a paragraph (slower method)
         let newParagraph = document.createElement('p');
@@ -106,10 +118,10 @@
 
         newSpan.textContent = "This is a span tag";
 
-        mainDiv.insertAdjacentElement('beforebegin', newSpan);
-        // mainDiv.insertAdjacentElement('afterbegin', newSpan);
-        // mainDiv.insertAdjacentElement('beforeend', newSpan);
-        // mainDiv.insertAdjacentElement('afterend', newSpan);
+        mainDiv.insertAdjacentElement('beforeBegin', newSpan);
+        // mainDiv.insertAdjacentElement('afterBegin', newSpan);
+        // mainDiv.insertAdjacentElement('beforeEnd', newSpan);
+        // mainDiv.insertAdjacentElement('afterEnd', newSpan);
 
         // Removing an element (opposite of appendChild)
         let parentDiv = document.getElementById("mainDiv");
@@ -121,7 +133,9 @@
 
         let removed = document.getElementById('spara');
 
-        // getElementsByClassName() returns a collection, not a single element. ❌ remove() only works on individual elements, not collections. ✅ You must loop over the collection to remove elements one by one.
+        // getElementsByClassName() returns a collection, not a single element.
+        // ❌ remove() only works on individual elements, not collections. 
+        // ✅ You must loop over the collection to remove elements one by one.
 
         removed.remove();
         

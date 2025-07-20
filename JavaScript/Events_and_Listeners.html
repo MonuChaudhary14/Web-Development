@@ -11,21 +11,28 @@
 
     <button>Click Me</button> <!-- This is the event target-->
 
-    <div >
+    <div>
         <p id="fpara">
             Hello
         </p>
-        <p id = "div"> This is the second para</p>
+        <p id="div"> This is the second para</p>
     </div>
 
-    <a href = "https://www.youtube.com" id = "anchor">Press</a>
+    <a href="https://www.youtube.com" id="anchor">Press</a>
 
-    <div id = "wrapper">
-        <p id = "first">First Para</p>
-        <p id = "second">Second Para</p>
-        <p id = "third">Third Para</p>
-        <p id = "fourth">Fourth Para</p>
+    <div id="wrapper">
+        <p id="first">First Para</p>
+        <p id="second">Second Para</p>
+        <p id="third">Third Para</p>
+        <p id="fourth">Fourth Para</p>
     </div>
+     <div id="box">Click me</div>
+
+     <div>
+  <p id="myPara">
+    Click this paragraph or the <span style="color: red; cursor: pointer;">span</span> inside it.
+  </p>
+</div>
 
 
     <script>
@@ -65,7 +72,7 @@
 
         // In this , the node inherit from EventTarget which means node has all the properties of the EventTarget and the elememt inherit from the node
 
-      // EventListener <- Node <- Element 
+        // EventListener <- Node <- Element 
 
         function changeText() {
             // let fpara = document.getElementById("fpara");
@@ -73,7 +80,7 @@
             fpara.textContent = "Hello Monu Chaudhary";
         }
 
-        function change(event){
+        function change(event) {
             console.log(event);
             console.log("This is the event");
         }
@@ -133,6 +140,8 @@
         // Event Object
         /*
         When an event (like a click, submit, keydown, etc.) occurs in JavaScript, the browser automatically creates an event object and passes it to the event handler.
+        This is passed to the eventListener function
+
 
         This event object contains detailed information about the event, such as:
 
@@ -152,9 +161,16 @@
 
         */
 
+        let anchor1 = document.getElementById("anchor");
+
+        anchor1.addEventListener('click', function (event) {   // Event can have any name     (event) -> evenjt object
+            console.log(event);
+        })
+
+
         let div = document.getElementById("div");
 
-        div.addEventListener('click' , change);
+        div.addEventListener('click', change);
 
 
 
@@ -171,7 +187,7 @@
 
         let anchor = document.getElementById("anchor");
 
-        anchor.addEventListener('click' , function(event){
+        anchor.addEventListener('click', function (event) {
             event.preventDefault();
             anchor.textContent = "Click Done";
         })
@@ -181,11 +197,11 @@
 
         let paras = document.querySelectorAll('p');
 
-        function addalert(event){
+        function addalert(event) {
 
-            if(event.target.nodeName === "P"){
+            if (event.target.nodeName === "P") {
 
-            alert('You have clicked on ' + event.target.textContent);
+                alert('You have clicked on ' + event.target.textContent);
                 // Due to this only the para content will be shown
             }
 
@@ -201,7 +217,7 @@
 
         }
 
-        for(let i = 0; i < paras.length; i++){
+        for (let i = 0; i < paras.length; i++) {
             let para = paras[i];
 
             // para.addEventListener('click', function(){
@@ -215,11 +231,45 @@
         // We can also directly give the div as a listener 
 
         let divpara = document.getElementById('wrapper');
-        
-        divpara.addEventListener('click', addalert); 
+
+        divpara.addEventListener('click', addalert);
         // The add alert contain the target property which point to a specifc element which trigger the element so it shows which para is been connected
 
         // But if we click on the empty space , then it will print all the paras
+
+
+        // event.target.textContent is used in JavaScript to get the text content of the HTML element that triggered the event
+
+        element.addEventListener("eventName", function(event) {
+        console.log(event.target.textContent);
+        });
+
+
+        // Node Name
+
+        // In JavaScript, event.target.nodeName returns the name of the HTML tag (in uppercase) of the element that triggered the event.
+
+
+        
+        
+        
+        document.getElementById("box").addEventListener("click", function(event) {
+            console.log(event.target.nodeName);  // Output: "DIV"
+        });
+        
+        //  event.target.nodeName
+
+    //  This is used to apply listnere to a particular tag , like we place para in div and in para we place span, when we apply eventListener to para then it will work anywhere we click it but if we use event.target.nodename == span then it will only work for it
+
+          document.getElementById("myPara").addEventListener("click", function(event) {
+    if (event.target.nodeName === "SPAN") {
+      alert("You clicked the span!");
+    } else {
+      alert("You clicked something else inside the paragraph.");
+    }
+     });
+
+
 
 
 
@@ -234,12 +284,12 @@
 
             ✅ Syntax
             */
-            document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             // Your code here runs AFTER the HTML is fully loaded
             console.log("DOM is fully loaded");
-            });
-        
-        
+        });
+
+
 
 
     </script>
