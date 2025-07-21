@@ -7,7 +7,7 @@
 </head>
 <body>
     
-
+    
     <script>
 
         // Synchronous code-> 
@@ -24,6 +24,21 @@
         Without async, slow tasks freeze the page.
 
         Async ensures a smooth, responsive UI.
+
+
+        The Event Queue (also called Task Queue or Callback Queue) is a key part of JavaScript's concurrency model, and it works with the Call Stack and Event Loop to handle asynchronous tasks.
+
+        How It Works:
+        Asynchronous tasks (like setTimeout, fetch, event listeners, etc.) are sent to Web APIs in the browser.
+
+        Once they're done, their callback functions are queued in the Event Queue.
+
+        The Event Loop constantly checks:
+
+        If the Call Stack is empty ➜ it moves a callback from the Event Queue to the Call Stack for execution.
+
+
+
         */
 
 

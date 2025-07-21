@@ -12,11 +12,52 @@
     setTimeout(function () {
       console.log("This is a TimeOut Block");
     }, 3000);
-  }
+
+    return "This is a promise";
+  }  // A async function always return a promise 
+
+  // n JavaScript, await is a keyword used inside an async function to pause the execution of the function until a Promise is resolved or rejected.
+
+  /*
+  How it works:
+  The await keyword can only be used inside an async function.
+
+  It makes JavaScript wait until the promise is settled.
+
+  While it waits, the rest of the code does not block the main thread—JavaScript continues running other code.
+
+
+
+
 
   //An API endpoint is a specific URL where a client (like a frontend app or script) sends a request to access data or functionality from a server.
+  // API stands for Application Programming Interface.
+
+  // An API is a set of rules and tools that lets one software program talk to another — like a messenger that delivers your request and brings back the response.
+
+
+  // An API lets your code interact with:
+
+  // A web server (e.g., weather data, crypto prices)
+
+  // A library/module (like Math or fs in Node.js)
+
+  // A third-party app (like Google Maps, Twitter, etc.)
+                       
 
   let output = getData();  // returns a Promise
+
+
+  The fetch API returns a promise
+
+  The fetch() API is a modern way to make HTTP requests (like GET, POST, PUT, DELETE) in JavaScript. It returns a Promise, making it easy to work with async/await.
+
+  fetch(url, options)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  */
 
   // GET request
   async function getInfo() {

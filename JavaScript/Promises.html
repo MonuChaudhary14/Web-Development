@@ -10,7 +10,7 @@
 
 
     <script>
-
+ 
         // Promises are used to handle asynchronous operations, such as data fetching, file reading, or timers. A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
         /*
@@ -26,7 +26,7 @@
                 console.log("Monu");
                 resolve(1001);  // By appyling this, the promise is resolved or fulfilled so it changes the status 
 
-                // This will mark the status of promise to resolve and show the error which is provided
+                // This will mark the status of promise to reject and show the error which is provided
                 reject(new Error("This promise is not fulfilled"));
 
         });
@@ -65,6 +65,13 @@
             }
 
         });
+
+        // The .then() function is used to handle the result of a Promise after it has been resolved (i.e., completed successfully).
+
+        // promise.then(onFulfilled, onRejected);
+
+
+
 
         promise3.then((message) => {
             console.log("The message is "+ message);
@@ -107,7 +114,21 @@
             console.log(error);
         });
 
+        let waada1 = new Promise(function (reject, resolve){
+            setTimeout(() => {
+                console.log("SeTimeout1 started");
+            }, 2000);
+            resolve(true);
+        });
 
+        let output = waada1.then( () => {
+            let waada2 = new Promise( function(resolve, reject) {
+                resolve("waada2 resolved");
+            })
+            return waada2;   // This will return a promise
+        })
+        
+        output.then( (value) => console.log(value));  // This will return the value which is returned by the then function
 
     </script>
 </body>
