@@ -11,7 +11,8 @@
 
     <script>
  
-        // Promises are used to handle asynchronous operations, such as data fetching, file reading, or timers. A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+        // Promises are used to handle asynchronous operations, such as data fetching, file reading, or timers.
+        // A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 
         /*
         Promise States
@@ -44,7 +45,6 @@
 
         let promise2 = new Promise( (resolve, reject) => {
             setTimeout(function sayMyName(){
-
                 console.log("My name is Monu Chaudhary");
 
             } , 5000);
@@ -75,8 +75,8 @@
 
         promise3.then((message) => {
             console.log("The message is "+ message);
-        }).catch((error) => {
-            console.log("Error: "+error);
+        }).catch((error) => {e
+            console.log("Error: "+rror);
         }); 
         
         // We can add multiple"then" blocks in this

@@ -26,13 +26,13 @@
         <p id="third">Third Para</p>
         <p id="fourth">Fourth Para</p>
     </div>
-     <div id="box">Click me</div>
+    <div id="box">Click me</div>
 
-     <div>
-  <p id="myPara">
-    Click this paragraph or the <span style="color: red; cursor: pointer;">span</span> inside it.
-  </p>
-</div>
+    <div>
+        <p id="myPara">
+            Click this paragraph or the <span style="color: red; cursor: pointer;">span</span> inside it.
+        </p>
+    </div>
 
 
     <script>
@@ -44,8 +44,6 @@
         // monitorEvents(document);  // This will print all the events
 
         // unmonitorEvents(document);  // This will stop monitoring(printing) events
-
-
 
 
         /*monitorEvents() and unmonitorEvents() are not standard JavaScript functions — they are only available in Chromium-based browser developer consoles (like Chrome DevTools) for debugging purposes. They are not available in the global JavaScript scope when running scripts in an HTML page.*/
@@ -72,10 +70,10 @@
 
         // In this , the node inherit from EventTarget which means node has all the properties of the EventTarget and the elememt inherit from the node
 
-        // EventListener <- Node <- Element 
+        // EventListener <- Node <- Element          the Node refers to the DOM element (like a button, div, input, etc.) on which the event occurred.
 
         function changeText() {
-            // let fpara = document.getElementById("fpara");
+            let fpara = document.getElementById("fpara");
             fpara.style = "background-color :yellow";
             fpara.textContent = "Hello Monu Chaudhary";
         }
@@ -87,24 +85,24 @@
 
         let fpara = document.getElementById("fpara");
 
-        fpara.addEventListener('click', changeText); // Not to use the parentheses which will automatically call the function without can click
+        fpara.addEventListener('click', changeText); // Not to use the parentheses which will automatically call the function without event
 
 
         // Another method to call a event listener
         fpara.addEventListener('mouseover', function () {
             fpara.style = "background-color:blue";
-            fpara.textContent = "This is new text";
+            fpara.textContent = "Mouse Over";   // This will occur when the mouse enters into the area
         })
 
 
-        fpara.removeEventListener('click', changeText);
+        fpara.removeEventListener('click', changeText, true);
 
         // We cannot use the remove event Listener when we define the fucntion with the listener because it will treat it as an seperate object or reference
 
 
         // Life Cycle or Phases of Event
         /*
-        1.Capturing Phase (a.k.a. Capture phase)
+        1.Capturing Phase (a.k.a. Capture phase)   or Trickling Phase
         2.Target Phase
         3.Bubbling Phase
 
@@ -112,7 +110,9 @@
         In the capturing phase, the event starts from the root of the DOM tree (document) and travels down toward the target element. You can think of it as “from parent to child.”
 
         By default, JavaScript event listeners are triggered during the bubbling phase, but you can specifically tell the browser to listen during the capturing phase.
-
+        by giving true in the eventListener 
+        
+        ====>  fpara.removeEventListener('click', changeText, true);
 
 
         2. Target Phase
@@ -163,7 +163,7 @@
 
         let anchor1 = document.getElementById("anchor");
 
-        anchor1.addEventListener('click', function (event) {   // Event can have any name     (event) -> evenjt object
+        anchor1.addEventListener('click', function (event) {   // Event can have any name     (event) -> event object
             console.log(event);
         })
 
@@ -181,7 +181,6 @@
 
 */
 
-
         // We can prevent the default behavior of a function
 
 
@@ -189,7 +188,7 @@
 
         anchor.addEventListener('click', function (event) {
             event.preventDefault();
-            anchor.textContent = "Click Done";
+            anchor.textContent = "Clicked";
         })
 
 
@@ -199,7 +198,7 @@
 
         function addalert(event) {
 
-            if (event.target.nodeName === "P") {
+            if (event.target.nodeName === "P") {    // It returns a string representing the tag name of the element in UPPERCASE, or the type of node (like #text, #comment).
 
                 alert('You have clicked on ' + event.target.textContent);
                 // Due to this only the para content will be shown
@@ -240,8 +239,8 @@
 
         // event.target.textContent is used in JavaScript to get the text content of the HTML element that triggered the event
 
-        element.addEventListener("eventName", function(event) {
-        console.log(event.target.textContent);
+        element.addEventListener("eventName", function (event) {
+            console.log(event.target.textContent);
         });
 
 
@@ -250,24 +249,24 @@
         // In JavaScript, event.target.nodeName returns the name of the HTML tag (in uppercase) of the element that triggered the event.
 
 
-        
-        
-        
-        document.getElementById("box").addEventListener("click", function(event) {
+
+
+
+        document.getElementById("box").addEventListener("click", function (event) {
             console.log(event.target.nodeName);  // Output: "DIV"
         });
-        
+
         //  event.target.nodeName
 
-    //  This is used to apply listnere to a particular tag , like we place para in div and in para we place span, when we apply eventListener to para then it will work anywhere we click it but if we use event.target.nodename == span then it will only work for it
+        //  This is used to apply listnere to a particular tag , like we place para in div and in para we place span, when we apply eventListener to para then it will work anywhere we click it but if we use event.target.nodename == span then it will only work for it
 
-          document.getElementById("myPara").addEventListener("click", function(event) {
-    if (event.target.nodeName === "SPAN") {
-      alert("You clicked the span!");
-    } else {
-      alert("You clicked something else inside the paragraph.");
-    }
-     });
+        document.getElementById("myPara").addEventListener("click", function (event) {
+            if (event.target.nodeName === "SPAN") {
+                alert("You clicked the span!");
+            } else {
+                alert("You clicked something else inside the paragraph.");
+            }
+        });
 
 
 
@@ -278,7 +277,7 @@
             DOMContentLoaded is a browser event that fires when the initial HTML document is completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 
             ✅ Why use it?
-            JavaScript code often interacts with DOM elements. If you try to access or modify DOM elements before they’re fully loaded, you'll get errors like null or undefined.
+            JavaScript code often interacts with DOM elements. If you try to access or modify DOM elements befeore thy’re fully loaded, you'll get errors like null or undefined.
 
             Using DOMContentLoaded ensures the DOM is ready for JavaScript to safely run.
 

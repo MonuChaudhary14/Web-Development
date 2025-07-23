@@ -7,7 +7,7 @@
 
 console.log(a); // ❌ ReferenceError: Cannot access 'a' before initialization
 let a = 5;
-// In this example, the variable a exists in the scope (becau   se of hoisting), but it is in the temporal dead zone from the start of the scope until the let a = 5; line is executed.
+// In this example, the variable a exists in the scope (because of hoisting), but it is in the temporal dead zone from the start of the scope until the let a = 5; line is executed.
 
 // 🔹 TDZ also applies to const:
 
