@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    
+    <div class = "container">
+
+        <h1>Password Generator</h1>
+
+        <div class="display_container">
+             
+            <input readonly placeholder="Password" class = "display" data-passwordDisplay>   <!-- In this we have given a custom attribute of this tag-->
+
+            <button data-copy>
+                <span data-copyMsg></span>
+                <img src = "//" alt = "copy" width = "23" height= "23"> 
+            </button>
+
+        </div>
+
+        <div class="input_container">
+
+            <!-- Password length -->
+
+            <div class="length-container">
+                <p>Password Length</p>
+                <p class = "password_length" data-lengthNumber></p>
+            </div>
+
+            <!-- slider -->
+
+            <input type = "range" min = "1" max = "20" class = "slider" step="1" data-lengthSlider>
+
+            <!-- checkboxes  -->
+
+            <div>
+
+                <input type = "checkbox" id = "uppercase">
+                <label for = "uppercase">Inlcudes Uppercase Letters</label>
+
+                <input type = "checkbox" id = "lowercase">
+                <label for = "lowercase">Inlcudes Lowercase Letters</label>
+
+                <input type = "checkbox" id = "numbers">
+                <label for = "numbers">Inlcudes Numbers</label>
+
+                <input type = "checkbox" id = "symbols">
+                <label for = "symbols">Inlcudes Symbols</label>
+
+            </div>
+
+            <div class = "strength-container">
+                
+                <p> Strength</p>
+                <div data-indicator></div>
+
+            </div>
+            
+            <!-- Generate password  -->
+
+            <button class = "generateButton">Generate Password</button>
+
+
+        </div>
+
+    </div>
+
+    <script src = "index.js"></script>
+
+</body>
+</html>
