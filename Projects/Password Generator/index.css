@@ -1,6 +1,83 @@
-.container{
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #888888;
+    height: 100vh;
+    width: 100vw;
+}
+
+.generator-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 90%;
+    /* max-width: 450px; */
+    /* max-height: 40%; */
+}
+
+
+h1{
+    color: white;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.display_container{
+    background-color: rgb(0, 0, 0);
+    position : relative;
+    border-radius: 1rem;
+    border-bottom: 0.35 rgb(51, 47, 47);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    /* display: flex;
+    justify-content: space-evenly; */
+}
+
+
+.display{
+    width: 100%;
+    background-color: transparent;
+    outline : none;
+    border : none;
+    padding: 1.15rem 1rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+}
+
+.display::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: white;
+    opacity: 0.65;
+    text-transform: uppercase;
+}
+
+.copy-button{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
 }
