@@ -16,15 +16,24 @@ let password = "";
 let passwordLength = 10;
 let checkCount = 0;
 handleSlider();
+setIndicator("#ccc");
 
 // set password length
-function handleSlider(){
+function handleSlider() {
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
+
+    const max = parseInt(inputSlider.max);
+    const min = parseInt(inputSlider.min);
+    const percentage = ((passwordLength - min) * 100) / (max - min);
+
+    inputSlider.style.backgroundSize = `${percentage}% 100%`;
 }
+
 
 function setIndicator(color){
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow = `0px 0px 15px ${color}`;
 }
 
 function getRndInteger(min, max){

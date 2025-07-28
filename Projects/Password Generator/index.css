@@ -12,7 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #888888;
+    background-color: rgb(57, 19, 84);
     height: 100vh;
     width: 100vw;
 }
@@ -22,7 +22,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(21, 8, 33);
     width: 90%;
     /* max-width: 450px; */
     /* max-height: 40%; */
@@ -39,14 +39,12 @@ h1{
 }
 
 .display_container{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(21, 8, 33);
     position : relative;
     border-radius: 1rem;
-    border-bottom: 0.35 rgb(51, 47, 47);
+    border-bottom: 0.35rem solid rgb(73, 35, 96);
     margin: 1rem 0;
     padding-top: 0.35rem;
-    /* display: flex;
-    justify-content: space-evenly; */
 }
 
 
@@ -56,7 +54,7 @@ h1{
     outline : none;
     border : none;
     padding: 1.15rem 1rem;
-    color: black;
+    color: white;
     font-weight: 600;
     font-size: 1.15rem;
     line-height: 30px;
@@ -73,6 +71,7 @@ h1{
     color: white;
     opacity: 0.65;
     text-transform: uppercase;
+    transform: translateY(-50%);
 }
 
 .copy-button{
@@ -80,4 +79,157 @@ h1{
     top: 50%;
     right: 1.5rem;
     transform: translateY(-50%);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 1rem;
+    height: 1rem;
+}
+
+.tooltip{
+    background-color: rgb(105, 70, 127);
+    color: white;
+    position: absolute;
+    font-size: 0.75rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.tooltip.Active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.input_container{
+    width: 100%;
+    background-color: rgb(21, 8, 33);
+    border-bottom: 0.35rem solid rgb(73, 35, 96);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: white;
+}
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.password_length{
+    font-size: 1.5rem; 
+}
+
+.strength-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.circle{
+    border-radius: 50%;
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.generateButton{
+    margin-top: 0.8rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(179, 20, 241);
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid rgb(57, 18, 82);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+.check{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin: 1rem 0;
+}
+
+.check input{
+    appearance: none;
+    /* background-color: rgb(128, 192, 200); */
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(128, 192, 200);
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.check input:checked{
+    background-color: rgb(128, 192, 200);
+}
+
+.check input:checked::before{
+    content: '✓';
+    position: absolute;
+    color: black;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top: -3.5px;
+    transform: translateX(-50%) translateY(10%);
+}
+
+.check label{
+    font-size: 1.25rem;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, #00f, #00f) no-repeat,
+                #ccc;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.slider::-webkit-slider-thumb{
+    position: relative;
+    appearance: none;
+    background-color: rgb(236, 226, 226);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 12px 0px white;
+    transition: all 100ms ease-in;
+}
+
+.slider:focus{
+    outline: 3px solid rgb(203, 198, 198);
+}
+
+
+.slider::-webkit-slider-thumb:hover{
+    outline:2px solid white;
+    background-color: black ;
+    box-shadow: 0px 0px 12px 5px rgb(203, 189, 189);
 }
