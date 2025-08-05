@@ -228,6 +228,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+    gap: 7rem;
 }
 
 
@@ -235,35 +236,128 @@ body{
     display: flex;
     flex-direction: row;
     color: white;
+    gap: 3rem;
 }
 
 .project-info{
     width: 50%;
     height: 50%;
-    overflow: hidden;    
+    /* overflow: hidden;     */
 }
 
-.project-info-para{
-    margin-top: 1.5rem;
-    width: 110%;
-    z-index: 100;
+.project-info-para1{
+    margin-top: 2rem;
+    width: 120%;
     padding: 1rem;
-    position: relative;
-}
-.project-info-para-image{
-    position: absolute;
-    /* width: fit-content;
-    height: fit-content; */
+    background-color: red;
+    z-index: 100;
+    border-radius: 1rem;   
 }
 
 
-.project-image{
+.project-image1{
     position: relative;
-    width: 36rem;
-    height: 23rem;
+    width: 28rem;
+    height: 16rem;
     background-color: rgb(43, 11, 58);
+    z-index: -1;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    transform: translateX(-5%);
 }
 
-.project-image img{
+.project-image1 :nth-child(1){
+    border-radius: 1rem;
+    z-index: 5;
     position: absolute;
 }
+.project-image1 :nth-child(2) , .project-image :nth-child(3){
+    transform: translate(-10%);
+    position: absolute;
+}
+
+.project2{
+    margin-left: 2.5%;
+}
+
+.project-image2{
+    position: relative;
+    width: 28rem;
+    height: 16rem;
+    background-color: rgb(43, 11, 58);
+    z-index: -1;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    transform: translateX(-5%);
+}
+
+.project-image2 :nth-child(1){
+    border-radius: 1rem;
+    z-index: 5;
+    position: absolute;
+    transform: translateX(-27%);
+}
+
+.project-info-para2{
+    margin-top: 2rem;
+    width: 120%;
+    padding: 1rem;
+    background-color: red;
+    z-index: 100;
+    border-radius: 1rem;
+    transform : translateX(-25%);
+}
+
+.project-info p{
+    transform: translateX(-4%);
+}
+
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    justify-content: left;
+    width: 60%;
+    margin-left: 23%;
+    color: white;
+    gap: 1.5rem;
+}
+
+.contact-container :nth-child(1){
+    font-size: 2rem;
+}
+
+.contact-container :nth-child(2){
+    width: 80%;
+}
+
+.contact-container :nth-child(3){
+    text-decoration: none;
+    color: white;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items:center ; 
+    width: 10%;
+}
+
+.links a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* gap: 1rem; */
+}
+
+
+
+
+
+
