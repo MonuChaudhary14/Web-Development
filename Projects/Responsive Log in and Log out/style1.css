@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider1{
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    left: -50%;
+    background: linear-gradient(to right, #02a8a8, #4fb783);
+    overflow: hidden;
+    z-index : 5;
+    /* transition: transform 1s linear; */
+}
+
+.slider2{
+    position: absolute;
+    width: 50vw;
+    height: 100vh; 
+    right: 0%;
+    background: linear-gradient(to right, #000428, #004e92);
+    overflow: hidden;
+    /* transition: transform 1s linear; */
+}
+
+.signup-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container p , .login-container p{
+    font-size: 3rem;
+    color: green;
+}
+
+.action-button{
+    background-color: rgb(76, 175, 80);
+    outline: none;
+    border: none;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+.button-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.login-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.signup-button , .login-button{
+    outline: none;
+    border: none;
+    color:green;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@keyframes slide-rightside {
+    from{
+        left : -50%;
+    }
+    to{
+        left : 0;
+    }
+}
+
+@keyframes slide-leftside {
+    from{
+        right: 0;
+    }
+    to{
+        right : -50%;
+    }
+}
+
+
+.slide-right {
+    animation: slide-rightside 1s linear forwards;
+}
+
+.slide-left{
+    animation: slide-leftside 1s linear forwards;
+}
+
+.slide-right1{
+    animation : slide-rightside 1s linear reverse reverse forwards;
+}
+
+.slide-left1{
+    animation : slide-leftside 1s linear reverse reverse forwards;
+}
+
