@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    height: 500vh;
+    background-color: bisque;
+}
+
+.nav-bar{
+    position: absolute;
+    width: 50%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    margin-left: 50%;
+    justify-content: space-around;
+    align-items: center;
+    top: -20%;
+    transition: top 2s linear;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+    color: white;
+    background-color: green;
+    padding: 1.3rem;
+}
+p{
+    margin-top: 3rem;
+    padding: 3rem;
+}
+
+.scroll-down{
+    top: 0%;
+}
