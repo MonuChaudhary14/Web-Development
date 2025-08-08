@@ -16,6 +16,9 @@ submit.addEventListener('click', () =>{
 
     }
 
+    void overlay.offsetWidth;
+    void slider.offsetWidth;
+
     slider.style.backgroundColor = "green";
     overlay.style.backgroundColor = "rgb(5, 94, 6)";
 
@@ -37,6 +40,9 @@ failed.addEventListener('click', () =>{
 
     }
 
+    void overlay.offsetWidth;
+    void slider.offsetWidth;
+
     slider.style.backgroundColor = "red";
     overlay.style.backgroundColor = "rgb(94, 5, 5)";
 
@@ -57,6 +63,9 @@ information.addEventListener('click', () =>{
 
     }
 
+    void overlay.offsetWidth;
+    void slider.offsetWidth;
+
     slider.style.backgroundColor = "blue";
     overlay.style.backgroundColor = "rgb(5, 5, 94)";
 
@@ -76,6 +85,9 @@ warning.addEventListener('click', () =>{
         slider.classList.remove('slider-animation');
 
     }
+
+    void overlay.offsetWidth;
+    void slider.offsetWidth;z
 
     slider.style.backgroundColor = "orange";
     overlay.style.backgroundColor = "rgb(94, 94, 5)";

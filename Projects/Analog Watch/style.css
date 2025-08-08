@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    background-image: linear-gradient(to right , #51c617 , #0db098);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch{
+    border: 3px solid black;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: white;
+}
+p{
+    position: absolute;
+    color: black;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.minute-hand{
+    position: absolute;
+    height: 39%;
+    width: 2%;
+    background-color: black;
+    bottom: 50%;
+    left: 50%;
+    transform-origin:bottom;
+    transform: rotate(0deg);
+    transition: transform 1s linear;
+}
+
+.hour-hand{
+    position: absolute;
+    height: 30%;
+    width: 2%;
+    background-color: black;
+    bottom: 50%;
+    left: 50%;
+    transform-origin:bottom;
+    transform: rotate(0deg);
+    /* transition: transform 1s linear; */
+}
+
+.second-hand{
+    position: absolute;
+    height: 39%;
+    width: 1%;
+    background-color: red;
+    bottom: 50%;
+    left: 50%;
+    transform-origin:bottom;
+    transform: rotate(0deg);
+    /* transition: transform 1s linear; */
+}
+
+.one{
+    position: absolute;
+    top: 9.5%;
+    left: 71%;
+
+}
+
+.two{
+    position: relative;
+    top: 25%;
+    left: 86%;
+}
+
+.three{
+    position: absolute;
+    top: 46%;
+    left: 93%;
+}
+
+.four{
+    position: absolute;
+    top: 68%;
+    left: 87%;
+}
+
+.five{
+    position: absolute;
+    top: 84%;
+    left: 72%;
+}
+
+.six{
+    position: absolute;
+    top: 91%;
+    left: 50%;
+}
+
+.seven{
+    position: absolute;
+    top: 85%;
+    left: 27%;
+}
+
+.eight{
+    position: absolute;
+    top: 68%;
+    left: 11%;
+}
+
+.nine{
+    position: absolute;
+    top: 46%;
+    left: 4%;
+}
+
+.ten{
+    position: absolute;
+    top: 25%;
+    left: 9%;
+}
+
+.eleven{
+    position: absolute;
+    top: 9%;
+    left: 24%;
+}
+
+.twelve{
+    position: absolute;
+    top: 2.5%;
+    left: 47%;
+}
