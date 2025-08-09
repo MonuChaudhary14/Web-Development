@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <p class = "weather-name">Weather</p>
+
+        <div class="option-container">
+
+            <button class = "your-weather-button">Your Weather</button>
+            <button class = "search-weather-button">Search Weather</button>
+
+        </div>
+
+        <div class="grant-location-container">
+            <div class = "grant-location-image-container"><img src = "location-pin-svgrepo-com.svg" class = "grant-location-image"></div>
+            <p>Grant Location Access</p>
+            <p>Allow access to get weather information</p>
+            <button class = "grant-access-button">Grant Access</button>
+        </div>
+
+        <div class="search-container">
+
+            <div class="input-container">
+            <input type = "text" required placeholder="Enter the name of the city" class = "input">
+            <button  type = "submit" class = "search-button"><img src = "icons8-search.svg"></button>
+            </div>
+        </div>
+
+        <div class="your-weather-container">
+
+            <div class="city-info">
+                <p class = "city-name"></p>
+                <img src = "maps-and-flags-indian-svgrepo-com.svg" class = "country-image"> <!-- Give the both by css -->
+            </div>
+
+            <p class = "clouds-title">Clouds</p>
+
+            <p><img src = "clouds-cloud-svgrepo-com.svg" class = "clouds"></p>
+
+            <p class = "temp"></p>
+
+            <div class="multi-info-container">
+
+                <div class="windspeed-container">
+
+                    <div class="wind-image-container">
+                        <img src = "wind-svgrepo-com.svg" class = "wind-image">
+                    </div>
+                    
+                    <div>Windspeed</div>
+                    
+                    <div class="windspeed-value">
+                       
+                    </div>
+
+                </div>
+
+                <div class="humidity-container">
+
+                    <div class="humidity-image-container">
+                        <img src = "humidity-svgrepo-com.svg" class = "humidity-image">
+                    </div>
+                    
+                    <div>Humidity</div>
+                    
+                    <div class="humidity-value">
+                        
+                    </div>
+
+                </div>
+
+                <div class="clouds-container">
+
+                    <div class="clouds-image-container">
+                        <img src = "clouds-cloud-svgrepo-com.svg" class  = "clouds-image">
+                    </div>
+                    
+                    <div>Clouds</div>
+                    
+                    <div class="clouds-value">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="loading-container">
+
+            <div class="loading-image-container">
+                <img src = "1473.gif" class = "loading-image">
+            </div>
+            <p class = "loading-text">Loading...</p>
+
+        </div>
+
+
+
+    </div>
+        
+
+    </div>
+
+<script src = "script.js"></script>
+
+</body>
+</html>
