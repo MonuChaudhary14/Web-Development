@@ -4,9 +4,9 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "html": false,
+        "html": true,
         "javascript": true,
         "python": false,
-        "css": false
+        "css": true
     }
 }
