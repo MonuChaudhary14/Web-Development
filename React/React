@@ -1,0 +1,18 @@
+React is a library of java script
+
+React is all about component(function)
+
+# The execution of the code start from index.js file . This index.js file convert the root div present in the html file into react root element. the App component from the App.js file by rendering its root element 
+
+
+# package.json contain the scripts ,version , etc
+
+# js or jsx(java script xml) extension for file(App.js)
+
+
+To use a function or a class , first we have to export that and then import in other file
+
+# When we give npm start , then it convert the react code in js code which will be understand by the browser
+
+
+# In js file, class is a reserved keyword , so we use className in place of class
