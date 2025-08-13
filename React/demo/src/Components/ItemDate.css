@@ -1,0 +1,14 @@
+.Date{
+    font-size: 4rem;
+    color: #d24c4c;
+    text-align: center;
+} 
+
+.button{
+    padding: 1rem 2rem;
+    background-color: #d24c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
