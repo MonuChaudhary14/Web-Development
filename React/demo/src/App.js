@@ -1,52 +1,46 @@
-// import logo from './logo.svg';
+import React from 'react';
+import NewProduct from './Components/NewProduct';
 import './App.css';
-import Item from './Components/Item';
-import ItemDate from './Components/ItemDate';
-import Card from './Components/card';
 
-function App() {   // This is the first component(function) of React
-  
-  const itemName = 'SurfExcel';
+import Products from './Components/Product';
 
-  const response = [
-
+const App = () => {
+  const products = [
     {
-      itemName:'Nirma',
-      ItemDate:'20',
-      itemMonth : 'June 2',
-      itemyear : '2006'
-    }, 
+      id: 'p1',
+      title: 'Nirma',
+      amount: 100,
+      date: new Date(2021, 8, 10),
+    },
+    { 
+      id: 'p2', 
+      title: 'Sirf Excel', 
+      amount: 200, 
+      date: new Date(2021, 2, 2) },
     {
-      itemName:'SurfExcel',
-      ItemDate:'10',
-      itemMonth : 'July',
-      itemyear : '2025'
-    }
+      id: 'p3',
+      title: 'Tide',
+      amount: 130,
+      date: new Date(2021, 12, 28),
+    },
+    {
+      id: 'p4',
+      title: 'Maggi',
+      amount: 450,
+      date: new Date(2021, 5, 5),
+    },
+  ];
 
-  ]
+  function printProductData(data) {
+    console.log("i am inside APP.js")
+    console.log(data)
+  }
 
-
-
-
-  return (    // There should be a single element of whole the code inside this return 
-    <Card>  
+  return (
     <div>
-    <Item message = "This is the new message"> If we want this message to display, them we have to use props.children</Item>
-
-    <Item name = {response[0].itemName}></Item>
-    <ItemDate date = {response[0].ItemDate} month = {response[0].itemMonth} year = {response[0].itemyear}></ItemDate>
-
-    <Item name = {itemName}></Item>
-    <ItemDate date = {response[1].ItemDate} month = {response[1].itemMonth} year = {response[1].itemyear}></ItemDate>
-
-
-    <div className = "App">This will be displayed on local host</div> 
+      <NewProduct pranay = {printProductData} />
+      <Products items={products} />
     </div>
-    </Card>
-    // This is not a HTML code
-
-    // When we give property to card then it will be applied instead of individaul element. Find why?
-
   );
 }
 
