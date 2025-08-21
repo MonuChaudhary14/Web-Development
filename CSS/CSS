@@ -9,8 +9,6 @@ Methods to add CSS in file
 
 
 
-
-
 Selector is way to target single or multiple elements to change them through CSS
 
 Types->
@@ -27,7 +25,6 @@ Types->
 
 
 In font-family , the default fonts are known as web safe fonts.
-
 
 
 
@@ -50,9 +47,7 @@ Padding and border are added on top, increasing the element's total size.
 
 🧮 Total size = width + padding + border
 
-css
-Copy
-Edit
+
 div {
   width: 200px;
   padding: 20px;
@@ -68,9 +63,7 @@ This makes layout easier and more predictable.
 
 🧮 Total size = exactly the declared width and height
 
-css
-Copy
-Edit
+
 div {
   width: 200px;
   padding: 20px;
