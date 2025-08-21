@@ -7,13 +7,13 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    /* justify-content: center; */
     gap: 2rem;
     background-image: linear-gradient(to right , #0c58db, #110453);
     width: 100vw;
     height: 100vh;  
-    padding: 5rem;
+    padding: 2rem;
     overflow-x: hidden;
 }
 
@@ -26,9 +26,9 @@
 .option-container{
     display: flex;
     width: 30%;
-    /* margin-left: 30%; */
     margin-top: 2rem;
-    justify-content: space-between;
+    gap: 5rem;
+    justify-content: center;
     align-items: center;
 }
 
@@ -40,6 +40,7 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
 }
+
 .your-weather-button:focus{
     background-color: gray;
 }
@@ -132,12 +133,11 @@
 
 .multi-info-container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center ;
     gap: 1rem;
-    width: 80%;
-
 }
 
 .windspeed-container, .humidity-container, .clouds-container{

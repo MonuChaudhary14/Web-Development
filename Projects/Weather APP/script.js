@@ -14,14 +14,13 @@ const clouds_value = document.querySelector(".clouds-value");
 const search_button = document.querySelector('.search-button');
 const input_value = document.querySelector(".input");
 const option_container = document.querySelector(".option-container");
-
+let address;
 
 const API_key = "679c3ad87fd140a7b45163730252807";
 
 // http://api.weatherapi.com/v1/current.json?key=679c3ad87fd140a7b45163730252807&q=Pahasu&aqi=yes
 
 initial();
-
 
 
 function initial(){
@@ -34,17 +33,25 @@ function initial(){
 
 }
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
 async function display_information(result) {
 
-    your_weather_container.style.display = "flex";
-
-    
-    city_name.innerText = result.location.name;
-    clouds.innerText = result.current.condition.text;
-    temp.innerText = result.current.temp_c + "°C";
-    windspeed.innerText = result.current.wind_kph + " kph";
-    humidity.innerText = result.current.humidity + "%";
-    clouds_value.innerText = result.current.cloud + "%";
+  your_weather_container.style.display = "flex";
+  
+  
+  city_name.innerText = result.location.name;
+  clouds.src = '//cdn.weatherapi.com/weather/64x64/night/116.png';
+  temp.innerText = result.current.temp_c + "°C";
+  windspeed.innerText = result.current.wind_kph + " kph";
+  humidity.innerText = result.current.humidity + "%";
+  clouds_value.innerText = result.current.cloud + "%";
 
 }
 
@@ -57,32 +64,20 @@ async function call_api(lat, long){
     let data = await response.json();
 
 
-    let address = data.display_name.split(" ")[0];
+    address = data.display_name.split(" ")[0];
 
     let fetch_url = `http://api.weatherapi.com/v1/current.json?key=679c3ad87fd140a7b45163730252807&q=${address}&aqi=yes`;
-
-    console.log(address);
-
 
     let result = await fetch(fetch_url);
     let weather_data = await result.json();
 
 
-    grant_access_container.style.display = "none"; 
+    grant_access_container.style.display = "none";
     option_container.style.display = "flex";
     your_location_button.focus();
     display_information(weather_data);
-
-
 }
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
-}
 
 function success(position){
 
@@ -111,7 +106,7 @@ async function searchWeather(){
 }
 
 async function search_function() {
-    console.log("clicked");
+
     loading_container.style.display = "flex";
     
     let address = input_value.value;
@@ -125,7 +120,6 @@ async function search_function() {
     loading_container.style.display = "none";
     display_information(result);
 
-
 }
 
 search_button.addEventListener('click' , search_function);
@@ -135,7 +129,7 @@ async function your_weather_function() {
     search_weather_container.style.display = "none";
     loading_container.style.display = "flex";
 
-    let fetch_url = `http://api.weatherapi.com/v1/current.json?key=679c3ad87fd140a7b45163730252807&q=your_location&aqi=yes`;
+    let fetch_url = `http://api.weatherapi.com/v1/current.json?key=679c3ad87fd140a7b45163730252807&q=${address}&aqi=yes`;
 
     let data = await fetch(fetch_url);
 
