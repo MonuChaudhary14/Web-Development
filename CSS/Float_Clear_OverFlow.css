@@ -59,18 +59,20 @@ img{
     
     
     /*The float property is used to push an element to the left or right, allowing text and inline elements to wrap around it. 
+
     left – floats the element to the left.
 
-right – floats the element to the right.
+    right – floats the element to the right.
 
-none – default; the element does not float.
+    none – default; the element does not float.
 
-inherit – inherits float value from the parent*/
-}
+    inherit – inherits float value from the parent*/
+    }
 
 #right{
     float : right;
-    clear: right; /*The clear property tells an element to move down below any floated elements that appear before it.
+    clear: right; 
+    /*The clear property tells an element to move down below any floated elements that appear before it.
 
     So if you have elements floating to the left or right, and another element should appear after them (not beside them), you use clear.
     */

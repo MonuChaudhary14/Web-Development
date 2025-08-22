@@ -22,7 +22,7 @@
     
     position : relative;   /*It is given so that we can use top , bottom , etc. properties*/
 
-
+    
     animation-name: rightmovement;
     
     animation-duration: 5s;   /*The time taken to complete the animation*/
