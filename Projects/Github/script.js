@@ -2,7 +2,6 @@ const navSearchInput = document.getElementById("navSearchInput");
 const pageSearchInput = document.getElementById("pageSearchInput");
 const navSearchButton = document.getElementById("navSearchButton");
 const pageSearchButton = document.getElementById("pageSearchButton");
-
 const profile_image = document.querySelector('.profile-image');
 const username = document.querySelector('.username-text');
 const Name = document.querySelector('.Name');
@@ -31,7 +30,7 @@ function initial() {
     form_container.style.display = 'none';
 }
 
-home_page.addEventListener('click' , initial);
+home_page.addEventListener('click', initial);
 
 async function searchrepo(search_input) {
 
@@ -58,7 +57,7 @@ async function searchrepo(search_input) {
     bio.innerText = result.bio;
     follower_count.innerText = `Followers: ${result.followers}`;
 
-    trophy_image.src = `https://github-profile-trophy.vercel.app/?username=${result.login}&theme=tokyonight&title=Repositories,Commits,Stars,Followers,PullRequest,Issues&margin-w=15&no-bg=true&no-frame=true`;
+    trophy_image.src = `https://github-profile-trophy-rose-chi.vercel.app/?username=${result.login}&theme=tokyonight&title=Repositories,Commits,Stars,Followers,PullRequest,Issues&margin-w=15&no-bg=true&no-frame=true`;
     stats_image.src = `https://github-readme-stats.vercel.app/api?username=${result.login}&show_icons=true&theme=tokyonight&hide_border=true`;
     top_langs.src = `https://github-readme-stats.vercel.app/api/top-langs/?username=${result.login}&layout=compact&theme=tokyonight&hide_border=true`;
     streak_image.src = `https://streak-stats.demolab.com/?user=${result.login}&theme=tokyonight&hide_border=true`;
@@ -70,25 +69,24 @@ async function searchrepo(search_input) {
 
     repos.forEach(repo => {
 
-    const repoCard = `
+        const repoCard = `
         <div class="repo">
-            <!-- Top box -->
             <div class="repo-header">
                 <p class="repo-name">${repo.name}</p>
                 <p class="repo-visibility">${repo.visibility}</p>
             </div>
 
-            <!-- Bottom box -->
             <div class="repo-details">
                 <p class="language-used">${repo.language || "N/A"}</p>
                 <p class="created-time">Created: ${new Date(repo.created_at).toLocaleDateString()}</p>
                 <p class="updated-time">Updated: ${new Date(repo.updated_at).toLocaleDateString()}</p>
                 <p class="stars">Stars : ${repo.stargazers_count}</p>
                 <p class="forks">Forks : ${repo.forks_count}</p>
+                <p class="repo-description">Desc: ${repo.description || "No description available"}</p>
             </div>
         </div>
     `;
-    repos_container.innerHTML += repoCard;
+        repos_container.innerHTML += repoCard;
 
 
     });
@@ -97,5 +95,5 @@ async function searchrepo(search_input) {
     loading_container.style.display = 'none';
     profile_container.style.display = "flex";
     repos_container.style.display = 'flex';
-    form_container.style.display = 'flex'; 
+    form_container.style.display = 'flex';
 }

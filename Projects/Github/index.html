@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Repo Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons8-github.svg" type="image/x-icon">
 </head>
 
 <body>
@@ -13,10 +14,11 @@
     <div class="wrapper">
 
         <div class="nav-bar">
-            <p style="width: 50%; font-size: 1.5rem; cursor: pointer;" class = "home-page">Repo Explorer</p>
+            <p style="width: 50%; font-size: 1.5rem; cursor: pointer;" class="home-page">Repo Explorer</p>
 
-            <form class="form-container">
-                <input type="text" id="navSearchInput" placeholder="search for repo" class="search-bar" style="height: 3rem;">
+            <form class="form-container" >
+                <input type="text" id="navSearchInput" placeholder="search for repo" class="search-bar"
+                    style="height: 3rem;">
                 <button type="button" id="navSearchButton">
                     <img src="icons8-search.svg" class="search-button-image">
                 </button>
@@ -24,9 +26,10 @@
         </div>
 
         <div class="search-page">
-            <p class = "search-page-para">Search for Repository</p>
+            <p class="search-page-para">Search for Repository</p>
             <form class="form-container form-container1">
-                <input type="text" id="pageSearchInput" placeholder="search for repo" class="search-bar" style="height: 3rem;">
+                <input type="text" id="pageSearchInput" placeholder="search for repo" class="search-bar"
+                    style="height: 3rem;">
                 <button type="button" id="pageSearchButton">
                     <img src="icons8-search.svg" class="search-button-image">
                 </button>
@@ -34,7 +37,7 @@
         </div>
 
         <div class="loading-container">
-            <img src = "1473.gif" style="width: 5rem; height: 5rem;">
+            <img src="1473.gif" style="width: 5rem; height: 5rem;">
         </div>
 
         <div class="profile-container">
@@ -46,8 +49,10 @@
                     </div>
 
                     <div class="username-display-container">
-                        <p style="font-size: 2rem; color: white; font-weight: bold; text-align: center;" class="username-text"></p>
-                        <p style="font-size: 1.5rem; color: white; font-weight: lighter; text-align: center;" class="Name"></p>
+                        <p style="font-size: 2rem; color: white; font-weight: bold; text-align: center;"
+                            class="username-text"></p>
+                        <p style="font-size: 1.5rem; color: white; font-weight: lighter; text-align: center;"
+                            class="Name"></p>
                     </div>
                     <div class="bio" style="color: white; text-align: center;"></div>
                     <div class="follower-count" style="color: white;"></div>
@@ -57,7 +62,7 @@
 
                     <div class="github-stats">
                         <p style="font-size: 2rem; color: white;">GitHub Stats</p>
-                        <p class = "hr"></p>
+                        <p class="hr"></p>
                         <div class="stats-container">
                             <div class="stats-container-one">
                                 <img src="" class="stats-image">
@@ -84,4 +89,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

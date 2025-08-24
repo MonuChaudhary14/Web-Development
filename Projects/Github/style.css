@@ -44,7 +44,8 @@
     padding: 0 2rem;
 }
 
-#navSearchButton , #pageSearchButton{
+#navSearchButton,
+#pageSearchButton {
     border: none;
     outline: none;
     border-radius: 50%;
@@ -52,7 +53,7 @@
     padding: 0.5rem;
 }
 
-.search-page-para{
+.search-page-para {
     font-size: 4rem;
     color: white;
 }
@@ -68,7 +69,7 @@
     width: 100%;
 }
 
-.profile-image{
+.profile-image {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -148,12 +149,16 @@
 }
 
 .repo {
-    border: 1px solid black;
-    background-color: rgba(163, 160, 160, 0.388);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
-    padding: 1rem;
-    color: white;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
 .repo-header {
@@ -166,11 +171,18 @@
 .repo-name {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #58a6ff;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.hr{
-    width: 100%; 
-    height: 0.2rem; 
+.repo-name:hover {
+    text-decoration: underline;
+}
+
+.hr {
+    width: 100%;
+    height: 0.2rem;
     background-color: gray;
 }
 
@@ -178,17 +190,29 @@
 .repo-visibility {
     font-size: 0.9rem;
     opacity: 0.8;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .repo-details {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 1rem;
     font-size: 1rem;
+    color: white;
 }
 
-.loading-container{
+.repo-details p {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0.4rem;
+}
+
+.loading-container {
     display: none;
     justify-content: center;
     align-items: center;
@@ -208,23 +232,23 @@
         gap: 2rem;
     }
 
-    .form-container{
+    .form-container {
         justify-content: center;
     }
 
-    #navSearchInput{
+    #navSearchInput {
         width: 100%;
     }
 
-    .search-page-para{
+    .search-page-para {
         font-size: 2rem;
     }
 
-    #pageSearchInput{
+    #pageSearchInput {
         width: fit-content;
     }
 
-    .profile-info-container{
+    .profile-info-container {
         display: flex;
         flex-direction: column;
     }
@@ -236,56 +260,57 @@
         border-bottom: 2px solid gray;
     }
 
-    .github-stats{
+    .github-stats {
         margin-top: 2rem;
         width: 100%;
     }
 
-    .profile-info-display{
+    .profile-info-display {
         width: 100%;
         /* justify-content: center; */
         padding: 0;
         padding-left: 1rem;
     }
 
-    .hr{
+    .hr {
         /* width: 100%;
         height: 0.2rem;
         background-color: gray; */
         display: none;
     }
-    
+
     /* .stats-container{
         width: 100%;
     } */
 
-    .stats-container-one{
-        flex-direction: column;
-        width: 100%;
-    }
-    .stats-image{
-        width: 100%;
-    }
-
-    .top-langs{
-        width: 100%;
-    }
-
-    .stats-container-two{
+    .stats-container-one {
         flex-direction: column;
         width: 100%;
     }
 
-    .streak-image{
-       width: 100%;
+    .stats-image {
+        width: 100%;
     }
 
-    .github-tropies-container{
+    .top-langs {
+        width: 100%;
+    }
+
+    .stats-container-two {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .streak-image {
+        width: 100%;
+    }
+
+    .github-tropies-container {
         width: 100%;
         padding-bottom: 1.5rem;
     }
 
-    .trophy-image{
+    .trophy-image {
         width: 130%;
     }
 
