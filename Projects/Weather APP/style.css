@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+/* body{
+    background-image: url("majestic-mountain-sunrise-4-k-h31udd70nliv8o0l.jpg");
+    background-size: 100vw 100vh;
+} */
+
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -17,19 +22,33 @@
     overflow-x: hidden;
 }
 
+.card-container{
+    width: 60%;
+    margin: 1rem 20%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .weather-name{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: white;
 }
 
 .option-container{
     display: flex;
-    width: 30%;
+    width: 70%;
     margin-top: 2rem;
     gap: 5rem;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .your-weather-button{
@@ -39,24 +58,29 @@
     background-color: transparent;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s linear;
 }
 
-.your-weather-button:focus{
-    background-color: gray;
+.your-weather-button:hover{
+        transform: scale(1.1);
 }
 
 .search-weather-button{
     outline: none;
     border: none;
     color: white;
+    border-radius: 1rem;
     background-color: transparent;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    transition: transform 0.3s linear;
 }
 
-.search-weather-button:focus{
-    background-color: gray;
+.search-weather-button:hover{
+    transform: scale(1.1);
 }
+
 
 .grant-location-image-container{
     display: flex;
@@ -207,4 +231,8 @@
     cursor: pointer;
     width: 40px;
     height: 40px;
+}
+
+.button-color{
+    background-color: gray;
 }

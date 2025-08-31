@@ -75,11 +75,6 @@ div {
 
 
 
-
-
-
-
-
 In CSS, when multiple rules could apply to the same element, the browser uses specificity and the cascade to decide which style "wins". There are four key factors involved in this decision:
 
 1. Importance (Important declarations)

@@ -105,7 +105,8 @@ let number3 = numbers;
 
 // 1.
 number2 = [];
-// This numbers array will now point to a new refernce and the prev refernce will automatically removed by garbage collector but there is a problem in this method but if we give another array and give it same refernce then the other array will contain the same data
+// This numbers array will now point to a new refernce and the prev refernce will automatically removed by garbage collector
+// but there is a problem in this method but if we give another array and give it same refernce then the other array will contain the same data
 
 console.log("Original Error",numbers);
 console.log("Empty Array",number2);

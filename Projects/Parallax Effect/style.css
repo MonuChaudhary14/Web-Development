@@ -33,7 +33,7 @@
     transform: translateZ(-40px);
     scale: 4;
 }
-
+    
 .foreground {
     transform: translateZ(-20px);
     scale: 2.5;

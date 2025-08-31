@@ -7,6 +7,6 @@
         "html": false,
         "javascript": false,
         "python": false,
-        "css": true
+        "css": false
     }
 }

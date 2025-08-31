@@ -4,9 +4,6 @@ It is based on the font size of the element it's used in.
 
 So:
 
-ini
-Copy
-Edit
 1em = font-size of the current element
 🔸 What Happens When You Use padding in em?
 When you set padding in em, the actual padding space will scale with the font size.

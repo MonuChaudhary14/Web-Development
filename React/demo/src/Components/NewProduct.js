@@ -11,9 +11,11 @@ function NewProduct(props) {
         props.pranay(product);
     }
 
-    return (<div className='new-product'>
+    return (
+    <div className='new-product'>
         <ProductForm onSaveProduct = {saveProduct}/>
-    </div>)
+    </div>
+    )
 }
 
 export default NewProduct;

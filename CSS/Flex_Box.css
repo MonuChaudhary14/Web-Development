@@ -13,7 +13,7 @@
     
 
 
-    flex-wrap: wrap; /* When we use this, the element will wrap and come into new line 
+    flex-wrap:wrap; /* When we use this, the element will wrap and come into new line 
     when the screen ratio is reduced until the space is available
     */
 
