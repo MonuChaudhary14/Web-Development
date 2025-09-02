@@ -40,9 +40,7 @@ console.log(fullname);
 
 /*In the browser environment, name is a global property of the window object that refers to the name of the current window or frame:
 
-js
-Copy
-Edit
+
 console.log(window.name); // usually an empty string unless explicitly set
 So when you write:
 

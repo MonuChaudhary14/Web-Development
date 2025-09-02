@@ -5,7 +5,7 @@
 
 let obj = {
     fullname: "Monu Chaudhary",
-    "name": "Monu", // We can aslo write the key in " ". It is mostly used when there is a name in the key
+    "name": "Monu", // We can also write the key in " ". It is mostly used when there is a name in the key
     "full name": "monu",
 
     greet: function () {   // We can also make functions in it 

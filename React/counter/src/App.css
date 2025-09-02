@@ -1,42 +1,60 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.wrapper{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 100vh;
+  background: linear-gradient(to right , rgb(84, 170, 84) , rgb(32, 168, 185));
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.text-container{
+  font-size: 3rem;
 }
 
-.card {
-  padding: 2em;
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  gap: 3rem;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+.number-counter{
+  font-size: 1.5rem;
+}
+button{
+  background-color: white;
+  color: black;
+}
+
+.button1{
+  border-right: 2px solid black;
+  border-radius: 0%;
+}
+
+.button2{
+  border-left: 2px solid black;
+  border-radius: 0%;
+}
+
+.reset-button{
+  border: 2px solid black;
 }
