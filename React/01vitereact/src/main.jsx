@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import React from 'react'
-import App from './App.jsx'
+// import App from './App.jsx'
 
 function MyApp(){
     return (
@@ -13,9 +13,8 @@ function MyApp(){
 
 
 
-const anotherElement = (
+const anotherElement = (   // it is a JSX element
     <a href = "https://google.com" target = "_blank">Visit google</a>
-
 )
 
 const anotherUser = " ketan chaudhary";
@@ -36,9 +35,9 @@ createRoot(document.getElementById('root')).render(
         // OR
     // MyApp()
 
-    // anotherElement
+    // {anotherElement}
 
 
-    reactElement
+    {reactElement}
 
 )
