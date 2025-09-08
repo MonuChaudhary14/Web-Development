@@ -1,12 +1,13 @@
 {
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false,
         "html": false,
-        "javascript": false,
+        "javascript": true,
         "python": false,
         "css": false
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
