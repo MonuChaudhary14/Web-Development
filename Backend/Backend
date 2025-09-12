@@ -1,0 +1,86 @@
+The user interact with the frontend 
+
+All the functioning and braining comes into backend
+
+HTTP is used for communication betweeen client and the server
+
+
+Domain Name Resolution is the process of converting a human-readable domain name (like www.example.com) into its corresponding IP address (like 192.0.2.1), which computers and networks use to identify each other.
+
+Without resolution, you’d have to remember and type IP addresses instead of easy-to-use names.
+
+
+
+
+HTTP Requests-> 
+
+1. Get-> It fetch/retrieve the data from the server
+2. Put -> Update the data
+3. Post -> Submit/Add new data
+4. Delete -> Remove the data
+
+
+
+# In HTTP, idempotent means:
+ Making the same request multiple times should have the same effect as making it once.
+
+# Idempotent HTTP Methods
+
+GET → Fetching a resource does not change anything.
+HEAD → Same as GET but only headers.
+PUT → Replaces the resource. Doing it multiple times leaves the resource the same.
+DELETE → Deleting the same resource multiple times has no extra effect (still deleted).
+OPTIONS → Just asks about communication options, no state change.
+
+
+# Non-Idempotent Methods
+
+POST → Each POST usually creates a new resource. Multiple POSTs create duplicates.
+PATCH → May not be idempotent depending on the patch (increment vs overwrite).
+
+
+
+
+# Express Js
+
+It is a framework which is used to create server side application
+
+It is used to insantiate the server
+
+
+
+# npm init -y  is used to make a package.json file
+
+# npm i express   is used to install the express 
+
+
+
+
+# PostMan -> 
+
+Postman is a collaboration tool 
+Postman is a free API testing tool that lets you send HTTP requests (GET, POST, PUT, DELETE, etc.) and inspect the responses from your server or APIs.
+
+Send requests
+
+Add headers (like Content-Type, Authorization)
+
+Send request bodies (JSON, form data, files)
+
+Save and organize requests in collections
+
+Test APIs easily during development
+
+# Why use Postman?
+
+Quickly check if your API routes (/api/cars, /api/users) are working
+Debug what your server is receiving (req.body, headers, params, etc.)
+Simulate frontend requests (before you build the frontend)
+Test error cases (e.g., missing data, wrong method)
+Automate API testing (Postman scripts)
+
+
+
+# MongoDB
+
+Mongoose is used to coonect  
